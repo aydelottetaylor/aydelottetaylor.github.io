@@ -39,9 +39,9 @@ Describe what you hope to achieve through your data science journey:
 
 ## Contact
 
-- **Email**: your.email@example.com
-- **GitHub**: [github.com/your-username](https://github.com/your-username)
-- **LinkedIn**: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+- **Email**: taylor.r.aydelotte@gmail.com
+- **GitHub**: [github.com/aydelottetaylor](https://github.com/aydelottetaylor)
+- **LinkedIn**: [linkedin.com/in/taylor-aydelotte](https://www.linkedin.com/in/taylor-aydelotte-318b5022a/)
 
 ---
 
