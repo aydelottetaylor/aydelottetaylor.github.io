@@ -5,7 +5,8 @@ project:
 website:
   title: "Taylor Aydelotte - Data Science Portfolio"
   description: "A showcase of my data science projects and learning journey"
-  
+  site-url: https://github.com/aydelottetaylor/aydelottetaylor.github.io
+
   navbar:
     background: primary
     left:
