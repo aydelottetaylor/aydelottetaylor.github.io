@@ -9,7 +9,7 @@ This repository provides a simple template for creating a personal data science 
 - A GitHub account
 - Basic knowledge of Markdown
 
-### Quick Setup
+### Quick Setup 
 
 1. **Create your repository**
    - Use this template to create your own repository
