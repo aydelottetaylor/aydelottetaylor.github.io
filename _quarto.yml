@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 website:
-  title: "Taylor Aydelotte - Data Science Portfolio"
+  title: "Taylor Aydelotte - Portfolio"
   description: "A showcase of my data science projects and learning journey"
 
   navbar:
