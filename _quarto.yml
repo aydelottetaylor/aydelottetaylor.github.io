@@ -19,11 +19,11 @@ website:
             href: projects/index.md
           - text: "---"
           - text: "Exploratory Data Analysis"
-            href: projects/eda.qmd
+            href: projects/eda.md
           - text: "Data Acquisition"
-            href: projects/data-acquisition.qmd
-          - text: "Final Project"
-            href: projects/final-project.qmd
+            href: projects/data-acquisition.md
+          - text: "Final Project Stat 386"
+            href: projects/final-project.md
     right:
       - icon: github
         href: https://github.com/aydelottetaylor
@@ -34,9 +34,9 @@ website:
     - title: "Projects"
       contents:
         - projects/index.md
-        - projects/eda.qmd
-        - projects/data-acquisition.qmd
-        - projects/final-project.qmd
+        - projects/eda.md
+        - projects/data-acquisition.md
+        - projects/final-project.md
 
 format:
   html:

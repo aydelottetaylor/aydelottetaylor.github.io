@@ -32,65 +32,65 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Welcome to My Data Science Portfolio",
+    "title": "",
     "section": "",
-    "text": "Welcome to my data science portfolio! This site shows my journey learning data science and analytics. Here you’ll find projects that demonstrate what I’ve learned and discovered.\n\n\nThis portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages.\n\n\n\n\nProgramming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data\n\n\n\n\n\n\n\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "text": "Code"
   },
   {
     "objectID": "index.html#about-this-portfolio",
     "href": "index.html#about-this-portfolio",
-    "title": "Welcome to My Data Science Portfolio",
-    "section": "",
-    "text": "This portfolio shows my work learning data science. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
+    "title": "",
+    "section": "About This Portfolio",
+    "text": "About This Portfolio\nThis portfolio shows my experience in data science and analytics. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
   },
   {
-    "objectID": "index.html#skills-im-learning",
-    "href": "index.html#skills-im-learning",
-    "title": "Welcome to My Data Science Portfolio",
-    "section": "",
-    "text": "Programming: Python, Pandas for data analysis\nVisualization: Creating charts with Matplotlib and Seaborn\nData Collection: Getting data from files, websites, and APIs\nAnalysis: Finding patterns and answering questions with data"
+    "objectID": "index.html#my-skills",
+    "href": "index.html#my-skills",
+    "title": "",
+    "section": "My Skills",
+    "text": "My Skills\nSkilled in data analysis, machine learning, and database management with experience across Python, SQL, and modern data science libraries and frameworks.\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\nLibraries/Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask\nVisualization: Matplotlib, Seaborn, Plotly\nData Collection: Web Scraping, APIs\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\nTools: Jupyter Notebooks, Git, Postman, AWS"
   },
   {
     "objectID": "index.html#my-projects",
     "href": "index.html#my-projects",
-    "title": "Welcome to My Data Science Portfolio",
-    "section": "",
-    "text": "Learn how I explore datasets to find interesting patterns and answer questions.\n\n\n\nSee how I gather data from different sources and prepare it for analysis.\n\n\n\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+    "title": "",
+    "section": "My Projects",
+    "text": "My Projects\n\n\nData Exploration Project\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\nData Collection Project\nSee how I gather data from different sources and prepare it for analysis.\n\n\nFinal Project Stat 386\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About Me",
     "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
+    "text": "Hi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
   },
   {
     "objectID": "about.html#background",
     "href": "about.html#background",
     "title": "About Me",
     "section": "",
-    "text": "Write a brief introduction about yourself here. Include:\n\nYour academic background\nYour interest in data science\nYour career goals\nAny relevant experience or projects"
+    "text": "Hi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
   },
   {
     "objectID": "about.html#education",
     "href": "about.html#education",
     "title": "About Me",
     "section": "Education",
-    "text": "Education\n\n[Your Degree] - [University Name], [Year]\nRelevant Coursework: Statistics, Data Analysis, Programming, etc."
+    "text": "Education\n\nComputer Science ML/DS, Mathematics - Brigham Young University, 2026\nRelevant Coursework: Computational Linear Algebra, Advanced Software Construction, Database Modeling Concepts, Mathematics of Data Science, Deep Learning, Data Science Process, Data Science Capstone"
   },
   {
     "objectID": "about.html#skills-interests",
     "href": "about.html#skills-interests",
     "title": "About Me",
     "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming: Python\nData Analysis: Pandas, NumPy\nVisualization: Matplotlib, Seaborn\nMachine Learning: Scikit-learn\nTools: Jupyter Notebooks, Git/GitHub\n\n\n\nAreas of Interest\n\n[Your specific interests, e.g., environmental data, healthcare analytics, finance, etc.]\n[Other areas you’re curious about]"
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\n\nLibraries & Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\n\nTools: Git, Jupyter Notebooks, Postman, Jira\n\n\n\nAreas of Interest\n\nSports analytics (with a focus on basketball)\n\nTime series forecasting (sales, pricing, demand)\n\nApplied machine learning for finance and healthcare\n\nExploring patterns in data that inform decisions and improve lives"
   },
   {
     "objectID": "about.html#goals",
     "href": "about.html#goals",
     "title": "About Me",
     "section": "Goals",
-    "text": "Goals\nDescribe what you hope to achieve through your data science journey:\n\nShort-term learning objectives\nLong-term career aspirations\nTypes of problems you want to solve"
+    "text": "Goals\nIn the short term, I’m focused on strengthening my expertise in machine learning, deep learning, and cloud-based data systems while applying those skills to impactful projects and research.\nIn the long term, I aspire to work as a data scientist in tech, finance, or healthcare—or in the sports analytics space where my passion for data and athletics intersect. I’m also drawn to applied ML research and could see myself contributing to the development of new methods and tools for solving real-world problems."
   },
   {
     "objectID": "about.html#contact",
@@ -116,7 +116,7 @@
     "section": "",
     "text": "This is coming down the pipeline. Check again later.",
     "crumbs": [
-      "Final Project"
+      "Final Project Stat 386"
     ]
   }
 ]

@@ -4,38 +4,35 @@ title: "About Me"
 
 ## Background
 
-Write a brief introduction about yourself here. Include:
+Hi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.
 
-- Your academic background
-- Your interest in data science
-- Your career goals
-- Any relevant experience or projects
+Beyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact.
 
 ## Education
 
-- **[Your Degree]** - [University Name], [Year]
-- **Relevant Coursework**: Statistics, Data Analysis, Programming, etc.
+- **Computer Science ML/DS, Mathematics** - Brigham Young University, 2026
+- **Relevant Coursework**: Computational Linear Algebra, Advanced Software Construction, Database Modeling Concepts, Mathematics of Data Science, Deep Learning, Data Science Process, Data Science Capstone
 
 ## Skills & Interests
 
 ### Technical Skills
-- **Programming**: Python
-- **Data Analysis**: Pandas, NumPy
-- **Visualization**: Matplotlib, Seaborn
-- **Machine Learning**: Scikit-learn
-- **Tools**: Jupyter Notebooks, Git/GitHub
+- **Programming Languages**: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS  
+- **Libraries & Frameworks**: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js  
+- **Visualization**: Matplotlib, Seaborn, Plotly  
+- **Databases**: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS  
+- **Tools**: Git, Jupyter Notebooks, Postman, Jira 
 
 ### Areas of Interest
-- [Your specific interests, e.g., environmental data, healthcare analytics, finance, etc.]
-- [Other areas you're curious about]
+- Sports analytics (with a focus on basketball)  
+- Time series forecasting (sales, pricing, demand)  
+- Applied machine learning for finance and healthcare  
+- Exploring patterns in data that inform decisions and improve lives  
 
 ## Goals
 
-Describe what you hope to achieve through your data science journey:
+In the short term, I’m focused on strengthening my expertise in machine learning, deep learning, and cloud-based data systems while applying those skills to impactful projects and research.  
 
-- Short-term learning objectives
-- Long-term career aspirations
-- Types of problems you want to solve
+In the long term, I aspire to work as a data scientist in tech, finance, or healthcare—or in the sports analytics space where my passion for data and athletics intersect. I’m also drawn to applied ML research and could see myself contributing to the development of new methods and tools for solving real-world problems.  
 
 ## Contact
 

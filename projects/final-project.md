@@ -1,7 +1,7 @@
 ---
-title: "EDA Project"
+title: "Final Project Stat 386"
 author: "Taylor Aydelotte"
-date: "2025-01-01"
+date: "2025-9-16"
 format:
   html:
     code-fold: true
