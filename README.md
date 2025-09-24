@@ -1,4 +1,4 @@
 # My Portfolio
 
-Visit @ ___ to learn more about me!
+Visit [HERE](https://aydelottetaylor.github.io/) to learn more about me!
 
