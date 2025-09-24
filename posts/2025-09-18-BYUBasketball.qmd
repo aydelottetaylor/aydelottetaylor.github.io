@@ -1,0 +1,76 @@
+---
+title: "BYU Basketball: Offensive Firepower Meets Defensive Potential"
+date: 2025-09-18
+categories: [Sports Analytics, BYU Basketball, Data Science]
+---
+
+![](/resources/byu1.jpg){width=80% style="border-radius: 2%"}
+
+## Introduction
+Richie Saunders recently gave an insightful interview on BYU Sports Nation, sharing excitement about the team’s mindset heading into the season.  
+What stood out most was his focus on defense—an area where BYU has the potential to grow and become a true national contender.  
+
+In this post, I’ll break down BYU’s offensive strengths from last year, highlight the defensive gaps, and look at why this season could be special.
+
+
+## BYU's Offensive Excellence
+Last season, BYU was among the nation’s best on the offensive end.  
+Here’s a snapshot of how efficient they were:
+
+- **Points Per Game (PPG):** 81.4 (#Top 25 nationally)  
+- **Offensive SRS:** 13.85 (#11)  
+- **Offensive Rating:** 124.85 (#12)  
+
+The Cougars thrived on spacing and tempo:
+
+- Top-tier **3-Point Attempt Rate** (unsurprising with KY and his NBA-influenced staff).  
+- Strong **rebounding** presence.  
+- Elite **Effective Field Goal % (eFG%)**: 0.570 (#7 in the country).  
+- Tremendous **True Shooting %**: 0.592 (#15 in the country).
+
+Simply put, BYU could score with anyone.
+
+
+## The Defensive Question
+BYU’s offense carried the spotlight last season, but their defense sometimes lagged behind. Statistically, the Cougars hovered in the low 50s to 60s nationally in both defensive rating and SRS, putting them closer to “good enough” than “elite.”
+
+When the competition stiffened, that gap became clear. Against Alabama in the Sweet 16, BYU gave up 113 points—a performance that highlighted just how much defensive shortcomings can undo even a strong offensive showing.
+
+St. John’s provided a mirror image, leaning on an excellent defense but struggling offensively, finishing around 60th in offensive rating. In their tournament matchup, they were held to only 66 points against Arkansas. Both examples show the same lesson: balance is the difference between being good and being great.
+
+Efficiencies among 2025 **Final Four** teams: 
+
+- Duke: #1 Off. Rating, #4 Def. Rating
+- Houston: #10 Off. Rating, #1 Def. Rating
+- Florida: #3 Off. Rating, #9 Def. Rating
+- Auburn: #2 Off. Rating, #7 Def. Rating
+
+The lesson? True contenders must balance both ends of the floor.
+
+
+## Defensive Potential This Season (2025-26)
+Here’s where optimism kicks in. Richie Saunders praised teammates like **Kennard Davis (Southern Illinois transfer)** for their defensive hustle and intensity. Other defensive contrubutors will include Richie himself, **Keba Keita** in the middle, and **AJ Dybantsa**—the nation’s top high school recruit and the projected **#1 pick in the 2026 NBA Draft**. Dybantsa brings elite talent and a reputation for relentless effort on both ends of the floor, making him a potential game-changer from day one. 
+
+In short, BYU finds themselves with a roster that is:  
+
+- Loaded with **athleticism**.  
+- Full of guys who **take pride in defense**.  
+- Committed to building an identity beyond scoring.  
+
+If BYU can maintain offensive efficiency *and* elevate their defensive metrics, they’ll move into the conversation as a true national title threat.  
+
+
+## Looking Ahead
+As the season tips off, I’ll be watching for:  
+1. **Defensive cohesion** – can this group gel into a lockdown unit?  
+2. **Consistency vs top teams** – will defensive effort translate against elite competition?  
+3. **Sustaining offense** – can BYU repeat or improve upon last year’s incredible efficiency?  
+
+If the answer is “yes” to all three, this could be one of the most exciting BYU seasons in years.
+
+## Conclusion
+Last year showed how far BYU’s offense could take them. This year, the story might be about how far their *defense* carries them.
+
+If the team embraces both sides of the ball, Cougar fans should buckle up for a deep tournament run.  
+
+(Find the stats I used today and much more at [Matchup-Madness.com](https://matchup-madness.com))

@@ -10,8 +10,8 @@
     ]
   },
   {
-    "objectID": "projects/index.html#all-projects",
-    "href": "projects/index.html#all-projects",
+    "objectID": "projects/index.html#my-projects",
+    "href": "projects/index.html#my-projects",
     "title": "Projects Overview",
     "section": "",
     "text": "Description: Pick a dataset and explore it to discover insights and answer questions.\n\n\n\nDescription: Find an interesting data source, collect the data, and prepare it for analysis.\n\n\n\nDescription: A comprehensive project that shows off my data science skills.",
@@ -28,6 +28,20 @@
     "crumbs": [
       "EDA Project"
     ]
+  },
+  {
+    "objectID": "posts/index.html",
+    "href": "posts/index.html",
+    "title": "Blog History",
+    "section": "",
+    "text": "Description: Looking at last year’s team and it’s strengths. Finding out where the Cougs can improve and make the upcoming season special."
+  },
+  {
+    "objectID": "posts/index.html#all-posts",
+    "href": "posts/index.html#all-posts",
+    "title": "Blog History",
+    "section": "",
+    "text": "Description: Looking at last year’s team and it’s strengths. Finding out where the Cougs can improve and make the upcoming season special."
   },
   {
     "objectID": "index.html",
@@ -58,18 +72,11 @@
     "text": "My Projects\n\n\nData Exploration Project\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\nData Collection Project\nSee how I gather data from different sources and prepare it for analysis.\n\n\nFinal Project Stat 386\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "Hi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
-  },
-  {
     "objectID": "about.html#background",
     "href": "about.html#background",
     "title": "About Me",
-    "section": "",
-    "text": "Hi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
+    "section": "Background",
+    "text": "Background\nHi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
   },
   {
     "objectID": "about.html#education",
@@ -83,7 +90,7 @@
     "href": "about.html#skills-interests",
     "title": "About Me",
     "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\n\nLibraries & Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\n\nTools: Git, Jupyter Notebooks, Postman, Jira\n\n\n\nAreas of Interest\n\nSports analytics (with a focus on basketball)\n\nTime series forecasting (sales, pricing, demand)\n\nApplied machine learning for finance and healthcare\n\nExploring patterns in data that inform decisions and improve lives"
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\n\nLibraries & Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\n\nTools: Git, Jupyter Notebooks, Postman, Jira\n\n\n\nAreas of Interest\n\nSports analytics (with a focus on basketball), find me on Matchup-Madness.com\n\nTime series forecasting (sales, pricing, demand)\n\nApplied machine learning for finance and healthcare\n\nExploring patterns in data that inform decisions and improve lives"
   },
   {
     "objectID": "about.html#goals",
@@ -100,11 +107,46 @@
     "text": "Contact\n\nEmail: taylor.r.aydelotte@gmail.com\nGitHub: github.com/aydelottetaylor\nLinkedIn: linkedin.com/in/taylor-aydelotte\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
   },
   {
-    "objectID": "blog.html",
-    "href": "blog.html",
-    "title": "",
-    "section": "",
-    "text": "Code\n\n\n\n\n\nHello! This is my blog\nComing soon!"
+    "objectID": "posts/2025-09-18-BYUBasketball.html#introduction",
+    "href": "posts/2025-09-18-BYUBasketball.html#introduction",
+    "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
+    "section": "Introduction",
+    "text": "Introduction\nRichie Saunders recently gave an insightful interview on BYU Sports Nation, sharing excitement about the team’s mindset heading into the season.\nWhat stood out most was his focus on defense—an area where BYU has the potential to grow and become a true national contender.\nIn this post, I’ll break down BYU’s offensive strengths from last year, highlight the defensive gaps, and look at why this season could be special."
+  },
+  {
+    "objectID": "posts/2025-09-18-BYUBasketball.html#byus-offensive-excellence",
+    "href": "posts/2025-09-18-BYUBasketball.html#byus-offensive-excellence",
+    "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
+    "section": "BYU’s Offensive Excellence",
+    "text": "BYU’s Offensive Excellence\nLast season, BYU was among the nation’s best on the offensive end.\nHere’s a snapshot of how efficient they were:\n\nPoints Per Game (PPG): 81.4 (#Top 25 nationally)\n\nOffensive SRS: 13.85 (#11)\n\nOffensive Rating: 124.85 (#12)\n\nThe Cougars thrived on spacing and tempo:\n\nTop-tier 3-Point Attempt Rate (unsurprising with KY and his NBA-influenced staff).\n\nStrong rebounding presence.\n\nElite Effective Field Goal % (eFG%): 0.570 (#7 in the country).\n\nTremendous True Shooting %: 0.592 (#15 in the country).\n\nSimply put, BYU could score with anyone."
+  },
+  {
+    "objectID": "posts/2025-09-18-BYUBasketball.html#the-defensive-question",
+    "href": "posts/2025-09-18-BYUBasketball.html#the-defensive-question",
+    "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
+    "section": "The Defensive Question",
+    "text": "The Defensive Question\nBYU’s offense carried the spotlight last season, but their defense sometimes lagged behind. Statistically, the Cougars hovered in the low 50s to 60s nationally in both defensive rating and SRS, putting them closer to “good enough” than “elite.”\nWhen the competition stiffened, that gap became clear. Against Alabama in the Sweet 16, BYU gave up 113 points—a performance that highlighted just how much defensive shortcomings can undo even a strong offensive showing.\nSt. John’s provided a mirror image, leaning on an excellent defense but struggling offensively, finishing around 60th in offensive rating. In their tournament matchup, they were held to only 66 points against Arkansas. Both examples show the same lesson: balance is the difference between being good and being great.\nEfficiencies among 2025 Final Four teams:\n\nDuke: #1 Off. Rating, #4 Def. Rating\nHouston: #10 Off. Rating, #1 Def. Rating\nFlorida: #3 Off. Rating, #9 Def. Rating\nAuburn: #2 Off. Rating, #7 Def. Rating\n\nThe lesson? True contenders must balance both ends of the floor."
+  },
+  {
+    "objectID": "posts/2025-09-18-BYUBasketball.html#defensive-potential-this-season-2025-26",
+    "href": "posts/2025-09-18-BYUBasketball.html#defensive-potential-this-season-2025-26",
+    "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
+    "section": "Defensive Potential This Season (2025-26)",
+    "text": "Defensive Potential This Season (2025-26)\nHere’s where optimism kicks in. Richie Saunders praised teammates like Kennard Davis (Southern Illinois transfer) for their defensive hustle and intensity. Other defensive contrubutors will include Richie himself, Keba Keita in the middle, and AJ Dybantsa—the nation’s top high school recruit and the projected #1 pick in the 2026 NBA Draft. Dybantsa brings elite talent and a reputation for relentless effort on both ends of the floor, making him a potential game-changer from day one.\nIn short, BYU finds themselves with a roster that is:\n\nLoaded with athleticism.\n\nFull of guys who take pride in defense.\n\nCommitted to building an identity beyond scoring.\n\nIf BYU can maintain offensive efficiency and elevate their defensive metrics, they’ll move into the conversation as a true national title threat."
+  },
+  {
+    "objectID": "posts/2025-09-18-BYUBasketball.html#looking-ahead",
+    "href": "posts/2025-09-18-BYUBasketball.html#looking-ahead",
+    "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
+    "section": "Looking Ahead",
+    "text": "Looking Ahead\nAs the season tips off, I’ll be watching for:\n1. Defensive cohesion – can this group gel into a lockdown unit?\n2. Consistency vs top teams – will defensive effort translate against elite competition?\n3. Sustaining offense – can BYU repeat or improve upon last year’s incredible efficiency?\nIf the answer is “yes” to all three, this could be one of the most exciting BYU seasons in years."
+  },
+  {
+    "objectID": "posts/2025-09-18-BYUBasketball.html#conclusion",
+    "href": "posts/2025-09-18-BYUBasketball.html#conclusion",
+    "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
+    "section": "Conclusion",
+    "text": "Conclusion\nLast year showed how far BYU’s offense could take them. This year, the story might be about how far their defense carries them.\nIf the team embraces both sides of the ball, Cougar fans should buckle up for a deep tournament run.\n(Find the stats I used today and much more at Matchup-Madness.com)"
   },
   {
     "objectID": "projects/data-acquisition.html",

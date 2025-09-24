@@ -135,10 +135,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../about.html"> 
 <span class="menu-text">About Me</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../blog.html"> 
-<span class="menu-text">Blog</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-blog" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Blog</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-blog">    
+        <li>
+    <a class="dropdown-item" href="../posts/index.html">
+ <span class="dropdown-text">All Blog Posts</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../posts/2025-09-18-BYUBasketball.html">
+ <span class="dropdown-text">2025-09-18 - BYU Basketball</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-projects" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Projects</span>
@@ -236,12 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#all-projects" id="toc-all-projects" class="nav-link active" data-scroll-target="#all-projects">All Projects</a>
-  <ul class="collapse">
-  <li><a href="#exploratory-data-analysis-project" id="toc-exploratory-data-analysis-project" class="nav-link" data-scroll-target="#exploratory-data-analysis-project">Exploratory Data Analysis Project</a></li>
-  <li><a href="#data-acquisition-project" id="toc-data-acquisition-project" class="nav-link" data-scroll-target="#data-acquisition-project">Data Acquisition Project</a></li>
-  <li><a href="#final-project-stat-386" id="toc-final-project-stat-386" class="nav-link" data-scroll-target="#final-project-stat-386">Final Project Stat 386</a></li>
-  </ul></li>
+  <li><a href="#my-projects" id="toc-my-projects" class="nav-link active" data-scroll-target="#my-projects">My Projects</a></li>
   </ul>
 </nav>
     </div>
@@ -267,18 +273,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="all-projects" class="level2">
-<h2 class="anchored" data-anchor-id="all-projects">All Projects</h2>
-<section id="exploratory-data-analysis-project" class="level3">
-<h3 class="anchored" data-anchor-id="exploratory-data-analysis-project"><a href="../projects/eda.html">Exploratory Data Analysis Project</a></h3>
+<section id="my-projects" class="level2">
+<h2 class="anchored" data-anchor-id="my-projects">My Projects</h2>
+<section id="exploratory-data-analysis-project" class="level4">
+<h4 class="anchored" data-anchor-id="exploratory-data-analysis-project"><a href="../projects/eda.html">Exploratory Data Analysis Project</a></h4>
 <p><strong>Description</strong>: Pick a dataset and explore it to discover insights and answer questions.</p>
 </section>
-<section id="data-acquisition-project" class="level3">
-<h3 class="anchored" data-anchor-id="data-acquisition-project"><a href="../projects/data-acquisition.html">Data Acquisition Project</a></h3>
+<section id="data-acquisition-project" class="level4">
+<h4 class="anchored" data-anchor-id="data-acquisition-project"><a href="../projects/data-acquisition.html">Data Acquisition Project</a></h4>
 <p><strong>Description</strong>: Find an interesting data source, collect the data, and prepare it for analysis.</p>
 </section>
-<section id="final-project-stat-386" class="level3">
-<h3 class="anchored" data-anchor-id="final-project-stat-386"><a href="../projects/final-project.html">Final Project Stat 386</a></h3>
+<section id="final-project-stat-386" class="level4">
+<h4 class="anchored" data-anchor-id="final-project-stat-386"><a href="../projects/final-project.html">Final Project Stat 386</a></h4>
 <p><strong>Description</strong>: A comprehensive project that shows off my data science skills.</p>
 
 
@@ -743,15 +749,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Projects Overview"</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## All Projects</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## My Projects</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Exploratory Data Analysis Project](eda.qmd)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Exploratory Data Analysis Project](eda.qmd)</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>**Description**: Pick a dataset and explore it to discover insights and answer questions.</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Data Acquisition Project](data-acquisition.qmd)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Data Acquisition Project](data-acquisition.qmd)</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>**Description**: Find an interesting data source, collect the data, and prepare it for analysis.</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### [Final Project Stat 386](final-project.qmd)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">#### [Final Project Stat 386](final-project.qmd)</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>**Description**: A comprehensive project that shows off my data science skills.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

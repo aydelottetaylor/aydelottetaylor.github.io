@@ -14,7 +14,11 @@ website:
       - text: "About Me"
         href: about.qmd
       - text: "Blog"
-        href: blog.qmd
+        menu:
+          - text: "All Blog Posts"
+            href: "posts/index.qmd"
+          - text: "2025-09-18 - BYU Basketball"
+            href: posts/2025-09-18-BYUBasketball.qmd
       - text: "Projects"
         menu:
           - text: "All Projects"
