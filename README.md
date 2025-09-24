@@ -30,12 +30,12 @@ This repository provides a simple template for creating a personal data science 
 
 ```
 ├── _quarto.yml          # Site configuration
-├── index.md             # Your homepage
-├── about.md             # About me page
+├── index.qmd             # Your homepage
+├── about.qmd             # About me page
 ├── projects/            # Your project files
-│   ├── eda.md          # Data exploration template
-│   ├── data-acquisition.md  # Data collection template
-│   └── final-project.md     # Final project template
+│   ├── eda.qmd          # Data exploration template
+│   ├── data-acquisition.qmd  # Data collection template
+│   └── final-project.qmd     # Final project template
 └── styles.css           # Custom styling
 ```
 

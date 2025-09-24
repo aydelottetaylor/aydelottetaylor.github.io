@@ -3,27 +3,29 @@ project:
   output-dir: docs
 
 website:
-  title: "Taylor Aydelotte - Portfolio"
+  title: "Taylor Aydelotte"
   description: "A showcase of my data science projects and learning journey"
 
   navbar:
     background: primary
     left:
       - text: "Home"
-        href: index.md
+        href: index.qmd
       - text: "About Me"
-        href: about.md
+        href: about.qmd
+      - text: "Blog"
+        href: blog.qmd
       - text: "Projects"
         menu:
           - text: "All Projects"
-            href: projects/index.md
+            href: projects/index.qmd
           - text: "---"
           - text: "Exploratory Data Analysis"
-            href: projects/eda.md
+            href: projects/eda.qmd
           - text: "Data Acquisition"
-            href: projects/data-acquisition.md
+            href: projects/data-acquisition.qmd
           - text: "Final Project Stat 386"
-            href: projects/final-project.md
+            href: projects/final-project.qmd
     right:
       - icon: github
         href: https://github.com/aydelottetaylor
@@ -33,10 +35,10 @@ website:
   sidebar:
     - title: "Projects"
       contents:
-        - projects/index.md
-        - projects/eda.md
-        - projects/data-acquisition.md
-        - projects/final-project.md
+        - projects/index.qmd
+        - projects/eda.qmd
+        - projects/data-acquisition.qmd
+        - projects/final-project.qmd
 
 format:
   html:

@@ -31,17 +31,17 @@ Skilled in data analysis, machine learning, and database management with experie
 ::: {.grid}
 
 ::: {.g-col-6}
-### [Data Exploration Project](projects/eda.md)
+### [Data Exploration Project](projects/eda.qmd)
 Learn how I explore datasets to find interesting patterns and answer questions.
 :::
 
 ::: {.g-col-6}
-### [Data Collection Project](projects/data-acquisition.md)
+### [Data Collection Project](projects/data-acquisition.qmd)
 See how I gather data from different sources and prepare it for analysis.
 :::
 
 ::: {.g-col-6}
-### [Final Project Stat 386](projects/final-project.md)
+### [Final Project Stat 386](projects/final-project.qmd)
 See how I tackle a data science project beginning to end.
 :::
 
