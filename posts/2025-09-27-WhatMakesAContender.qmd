@@ -1,0 +1,144 @@
+---
+title: "What Makes a College Basketball Contender?"
+author: "Your Name"
+date: 2025-09-27
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    df-print: paged
+execute:
+  echo: true
+  warning: false
+  message: false
+editor: visual
+---
+
+> *A data-driven look at who can really cut down the nets.*
+
+## Introduction
+
+Every March, fans wonder: what separates a national title contender from the rest of the field? This season, I set out to answer that question—not by filling out another bracket, but by digging into the data. Here’s the story of how I built a **Contender Score** and tested which stats actually matter.
+
+::: callout-note
+This post is written for a Stat-386–level audience—comfortable with Python, pandas, and scikit-learn.
+:::
+
+## Designing the Contender Score
+
+| Round Reached            | Contender Score |
+|:-------------------------|----------------:|
+| National Champion         | 100             |
+| Runner-Up                 | 90              |
+| Final Four (lost in semi) | 80              |
+| Elite Eight               | 65              |
+| Sweet 16                  | 50              |
+| Round of 32               | 30              |
+| Round of 64               | 20              |
+| First Four loss           | 15              |
+| Missed Tournament         | 0               |
+
+This makes it easy to compare all teams on one scale.
+
+## The Data
+
+- **Efficiency metrics**: offensive/defensive rating, net efficiency  
+- **Four Factors**: effective FG%, turnover rate, ORB%, free throw rate  
+- **Contextual stats**: pace, strength of schedule  
+
+⚠️ I excluded tournament win counts to avoid leakage.
+
+As an example, effective FG% is defined as:
+
+$$ eFG = \frac{FGM + 0.5 \times 3PM}{FGA} $$
+
+## Correlation Check
+
+Here are a few charts that I generated to take a look at correlation between a bunch of different metrics including a team's Contender Score.
+
+![](/resources/heatmap.png){width=40% style="border-radius: 2%"}
+
+![](/resources/bar_chart_corr.png){width=40% style="border-radius: 2%"}
+
+Findings:
+- Net efficiency: strongest positive correlation  
+- Opponent eFG% allowed: huge driver  
+- Turnover %: negative impact  
+- Pace: little effect  
+
+## Regression Models
+
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import ElasticNet
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import r2_score, mean_absolute_error
+
+X = combined.drop(columns=["team_name","year","contender_score"])
+y = combined["contender_score"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+elastic = ElasticNet(alpha=0.1, l1_ratio=0.5, random_state=42)
+elastic.fit(X_train, y_train)
+print("ElasticNet R²:", r2_score(y_test, elastic.predict(X_test)))
+
+rf = RandomForestRegressor(n_estimators=500, random_state=42)
+rf.fit(X_train, y_train)
+print("RandomForest R²:", r2_score(y_test, rf.predict(X_test)))
+```
+
+Results:  
+- ElasticNet → R² ≈ 0.56, MAE ≈ 7.3  
+- RandomForest → R² ≈ 0.81, MAE ≈ 3.6  
+
+## Feature Importances
+
+```python
+import pandas as pd
+
+importances = pd.Series(rf.feature_importances_, index=X.columns).sort_values(ascending=False)
+importances.head(10).plot(kind="barh")
+plt.title("Top 10 Features by Importance")
+plt.show()
+```
+
+| Feature                                       | Importance |
+| --------------------------------------------- | ---------: |
+| `net_rating_adjusted`                         |   0.444064 |
+| `simple_rating_system`                        |   0.190065 |
+| `road_win_percentage`                         |   0.046014 |
+| `home_win_percentage`                         |   0.042977 |
+| `opponent_three_point_percentage`             |   0.013307 |
+| `three_point_percentage`                      |   0.011756 |
+| `margin_of_victory`                           |   0.010719 |
+| `opponent_free_throw_percentage`              |   0.010045 |
+| `opponent_steal_percentage`                   |   0.009718 |
+| `opponent_block_percentage`                   |   0.009532 |
+| `assist_percentage`                           |   0.009376 |
+| `strength_of_schedule`                        |   0.009060 |
+| `steal_percentage`                            |   0.008573 |
+| `opponent_free_throws_per_field_goal_attempt` |   0.008229 |
+| `opponent_assist_percentage`                  |   0.008150 |
+
+
+What stands out:  
+ - Adjusted Net Rating (0.44) dominates — no surprise, as it combines offensive and defensive efficiency into a single margin measure.  
+ - Simple Rating System (0.19) comes in strong as well, reinforcing that overall team strength is a core predictor.  
+ - Home and Road Win Percentages (0.04–0.05) show up prominently. These can be leaky if they include NCAA tournament games, but they also capture consistency across different environments.  
+ - Shooting percentages matter: both a team’s own 3PT% and their opponent’s 3PT% make the list, underscoring how much the perimeter game swings outcomes in March.  
+ - Margin of Victory, Free Throw %, and Turnovers (via steal/block/assist rates) add smaller but still notable contributions. These capture execution and discipline.  
+ - Strength of Schedule appears lower down, but still matters — elite teams tend to prove it against tough competition.   
+
+## Takeaways
+
+ - **Efficiency rules**: Adjusted Net Rating and SRS dominated the model, confirming that broad measures of overall strength drive contender status.
+ - **Consistency counts**: Home and road win percentages mattered more than expected, highlighting that playing well in any environment is a marker of strong teams (with the caveat of possible leakage).
+ - **Shooting swings games**: Both a team’s 3PT% and their opponent’s 3PT% landed in the top features — perimeter play is decisive in March.
+ - **Margins matter**: Stats like margin of victory, free throw %, and assist/turnover-related measures added smaller but real contributions, reflecting execution and discipline.
+ - **Schedule still matters**: Strength of Schedule showed up, reminding us that teams tested by tough competition are more likely to hold up in the tournament.
+
+## Wrapping Up
+
+The Random Forest model can predict contender_scores within about 3–4 points. Of course, there will always be outliers (like 2014 UConn), but the profile of a real contender is clear.

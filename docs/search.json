@@ -44,69 +44,6 @@
     "text": "Description: Looking at last year’s team and it’s strengths. Finding out where the Cougs can improve and make the upcoming season special."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "",
-    "section": "",
-    "text": "Code"
-  },
-  {
-    "objectID": "index.html#about-this-portfolio",
-    "href": "index.html#about-this-portfolio",
-    "title": "",
-    "section": "About This Portfolio",
-    "text": "About This Portfolio\nThis portfolio shows my experience in data science and analytics. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
-  },
-  {
-    "objectID": "index.html#my-skills",
-    "href": "index.html#my-skills",
-    "title": "",
-    "section": "My Skills",
-    "text": "My Skills\nSkilled in data analysis, machine learning, and database management with experience across Python, SQL, and modern data science libraries and frameworks.\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\nLibraries/Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask\nVisualization: Matplotlib, Seaborn, Plotly\nData Collection: Web Scraping, APIs\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\nTools: Jupyter Notebooks, Git, Postman, AWS"
-  },
-  {
-    "objectID": "index.html#my-projects",
-    "href": "index.html#my-projects",
-    "title": "",
-    "section": "My Projects",
-    "text": "My Projects\n\n\nData Exploration Project\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\nData Collection Project\nSee how I gather data from different sources and prepare it for analysis.\n\n\nFinal Project Stat 386\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
-  },
-  {
-    "objectID": "about.html#background",
-    "href": "about.html#background",
-    "title": "About Me",
-    "section": "Background",
-    "text": "Background\nHi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
-  },
-  {
-    "objectID": "about.html#education",
-    "href": "about.html#education",
-    "title": "About Me",
-    "section": "Education",
-    "text": "Education\n\nComputer Science ML/DS, Mathematics - Brigham Young University, 2026\nRelevant Coursework: Computational Linear Algebra, Advanced Software Construction, Database Modeling Concepts, Mathematics of Data Science, Deep Learning, Data Science Process, Data Science Capstone"
-  },
-  {
-    "objectID": "about.html#skills-interests",
-    "href": "about.html#skills-interests",
-    "title": "About Me",
-    "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\n\nLibraries & Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\n\nTools: Git, Jupyter Notebooks, Postman, Jira\n\n\n\nAreas of Interest\n\nSports analytics (with a focus on basketball), find me on Matchup-Madness.com\n\nTime series forecasting (sales, pricing, demand)\n\nApplied machine learning for finance and healthcare\n\nExploring patterns in data that inform decisions and improve lives"
-  },
-  {
-    "objectID": "about.html#goals",
-    "href": "about.html#goals",
-    "title": "About Me",
-    "section": "Goals",
-    "text": "Goals\nIn the short term, I’m focused on strengthening my expertise in machine learning, deep learning, and cloud-based data systems while applying those skills to impactful projects and research.\nIn the long term, I aspire to work as a data scientist in tech, finance, or healthcare—or in the sports analytics space where my passion for data and athletics intersect. I’m also drawn to applied ML research and could see myself contributing to the development of new methods and tools for solving real-world problems."
-  },
-  {
-    "objectID": "about.html#contact",
-    "href": "about.html#contact",
-    "title": "About Me",
-    "section": "Contact",
-    "text": "Contact\n\nEmail: taylor.r.aydelotte@gmail.com\nGitHub: github.com/aydelottetaylor\nLinkedIn: linkedin.com/in/taylor-aydelotte\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
-  },
-  {
     "objectID": "posts/2025-09-18-BYUBasketball.html#introduction",
     "href": "posts/2025-09-18-BYUBasketball.html#introduction",
     "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
@@ -147,6 +84,132 @@
     "title": "BYU Basketball: Offensive Firepower Meets Defensive Potential",
     "section": "Conclusion",
     "text": "Conclusion\nLast year showed how far BYU’s offense could take them. This year, the story might be about how far their defense carries them.\nIf the team embraces both sides of the ball, Cougar fans should buckle up for a deep tournament run.\n(Find the stats I used today and much more at Matchup-Madness.com)"
+  },
+  {
+    "objectID": "about.html#background",
+    "href": "about.html#background",
+    "title": "About Me",
+    "section": "Background",
+    "text": "Background\nHi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
+  },
+  {
+    "objectID": "about.html#education",
+    "href": "about.html#education",
+    "title": "About Me",
+    "section": "Education",
+    "text": "Education\n\nComputer Science ML/DS, Mathematics - Brigham Young University, 2026\nRelevant Coursework: Computational Linear Algebra, Advanced Software Construction, Database Modeling Concepts, Mathematics of Data Science, Deep Learning, Data Science Process, Data Science Capstone"
+  },
+  {
+    "objectID": "about.html#skills-interests",
+    "href": "about.html#skills-interests",
+    "title": "About Me",
+    "section": "Skills & Interests",
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\n\nLibraries & Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\n\nTools: Git, Jupyter Notebooks, Postman, Jira\n\n\n\nAreas of Interest\n\nSports analytics (with a focus on basketball), find me on Matchup-Madness.com\n\nTime series forecasting (sales, pricing, demand)\n\nApplied machine learning for finance and healthcare\n\nExploring patterns in data that inform decisions and improve lives"
+  },
+  {
+    "objectID": "about.html#goals",
+    "href": "about.html#goals",
+    "title": "About Me",
+    "section": "Goals",
+    "text": "Goals\nIn the short term, I’m focused on strengthening my expertise in machine learning, deep learning, and cloud-based data systems while applying those skills to impactful projects and research.\nIn the long term, I aspire to work as a data scientist in tech, finance, or healthcare—or in the sports analytics space where my passion for data and athletics intersect. I’m also drawn to applied ML research and could see myself contributing to the development of new methods and tools for solving real-world problems."
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About Me",
+    "section": "Contact",
+    "text": "Contact\n\nEmail: taylor.r.aydelotte@gmail.com\nGitHub: github.com/aydelottetaylor\nLinkedIn: linkedin.com/in/taylor-aydelotte\n\n\nThis portfolio showcases my learning progress and projects completed during my data science studies."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "",
+    "section": "",
+    "text": "Code"
+  },
+  {
+    "objectID": "index.html#about-this-portfolio",
+    "href": "index.html#about-this-portfolio",
+    "title": "",
+    "section": "About This Portfolio",
+    "text": "About This Portfolio\nThis portfolio shows my experience in data science and analytics. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
+  },
+  {
+    "objectID": "index.html#my-skills",
+    "href": "index.html#my-skills",
+    "title": "",
+    "section": "My Skills",
+    "text": "My Skills\nSkilled in data analysis, machine learning, and database management with experience across Python, SQL, and modern data science libraries and frameworks.\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\nLibraries/Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask\nVisualization: Matplotlib, Seaborn, Plotly\nData Collection: Web Scraping, APIs\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\nTools: Jupyter Notebooks, Git, Postman, AWS"
+  },
+  {
+    "objectID": "index.html#my-projects",
+    "href": "index.html#my-projects",
+    "title": "",
+    "section": "My Projects",
+    "text": "My Projects\n\n\nData Exploration Project\nLearn how I explore datasets to find interesting patterns and answer questions.\n\n\nData Collection Project\nSee how I gather data from different sources and prepare it for analysis.\n\n\nFinal Project Stat 386\nSee how I tackle a data science project beginning to end.\n\n\n\nThanks for visiting! Feel free to explore my projects and see what I’m learning."
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html",
+    "href": "posts/2025-09-27-WhatMakesAContender.html",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "",
+    "text": "A data-driven look at who can really cut down the nets."
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#introduction",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#introduction",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "Introduction",
+    "text": "Introduction\nEvery March, fans wonder: what separates a national title contender from the rest of the field? This season, I set out to answer that question—not by filling out another bracket, but by digging into the data. Here’s the story of how I built a Contender Score and tested which stats actually matter.\n\n\n\n\n\n\nNote\n\n\n\nThis post is written for a Stat-386–level audience—comfortable with Python, pandas, and scikit-learn."
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#designing-the-contender-score",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#designing-the-contender-score",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "Designing the Contender Score",
+    "text": "Designing the Contender Score\n\n\n\nRound Reached\nContender Score\n\n\n\n\nNational Champion\n100\n\n\nRunner-Up\n90\n\n\nFinal Four (lost in semi)\n80\n\n\nElite Eight\n65\n\n\nSweet 16\n50\n\n\nRound of 32\n30\n\n\nRound of 64\n20\n\n\nFirst Four loss\n15\n\n\nMissed Tournament\n0\n\n\n\nThis makes it easy to compare all teams on one scale."
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#the-data",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#the-data",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "The Data",
+    "text": "The Data\n\nEfficiency metrics: offensive/defensive rating, net efficiency\n\nFour Factors: effective FG%, turnover rate, ORB%, free throw rate\n\nContextual stats: pace, strength of schedule\n\n⚠️ I excluded tournament win counts to avoid leakage.\nAs an example, effective FG% is defined as:\n\\[ eFG = \\frac{FGM + 0.5 \\times 3PM}{FGA} \\]"
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#correlation-check",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#correlation-check",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "Correlation Check",
+    "text": "Correlation Check\nHere are a few charts that I generated to take a look at correlation between a bunch of different metrics including a team’s Contender Score.\n\n\nFindings: - Net efficiency: strongest positive correlation\n- Opponent eFG% allowed: huge driver\n- Turnover %: negative impact\n- Pace: little effect"
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#regression-models",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#regression-models",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "Regression Models",
+    "text": "Regression Models\nfrom sklearn.model_selection import train_test_split\nfrom sklearn.linear_model import ElasticNet\nfrom sklearn.ensemble import RandomForestRegressor\nfrom sklearn.metrics import r2_score, mean_absolute_error\n\nX = combined.drop(columns=[\"team_name\",\"year\",\"contender_score\"])\ny = combined[\"contender_score\"]\n\nX_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)\n\nelastic = ElasticNet(alpha=0.1, l1_ratio=0.5, random_state=42)\nelastic.fit(X_train, y_train)\nprint(\"ElasticNet R²:\", r2_score(y_test, elastic.predict(X_test)))\n\nrf = RandomForestRegressor(n_estimators=500, random_state=42)\nrf.fit(X_train, y_train)\nprint(\"RandomForest R²:\", r2_score(y_test, rf.predict(X_test)))\nResults:\n- ElasticNet → R² ≈ 0.56, MAE ≈ 7.3\n- RandomForest → R² ≈ 0.81, MAE ≈ 3.6"
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#feature-importances",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#feature-importances",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "Feature Importances",
+    "text": "Feature Importances\nimport pandas as pd\n\nimportances = pd.Series(rf.feature_importances_, index=X.columns).sort_values(ascending=False)\nimportances.head(10).plot(kind=\"barh\")\nplt.title(\"Top 10 Features by Importance\")\nplt.show()\n\n\n\nFeature\nImportance\n\n\n\n\nnet_rating_adjusted\n0.444064\n\n\nsimple_rating_system\n0.190065\n\n\nroad_win_percentage\n0.046014\n\n\nhome_win_percentage\n0.042977\n\n\nopponent_three_point_percentage\n0.013307\n\n\nthree_point_percentage\n0.011756\n\n\nmargin_of_victory\n0.010719\n\n\nopponent_free_throw_percentage\n0.010045\n\n\nopponent_steal_percentage\n0.009718\n\n\nopponent_block_percentage\n0.009532\n\n\nassist_percentage\n0.009376\n\n\nstrength_of_schedule\n0.009060\n\n\nsteal_percentage\n0.008573\n\n\nopponent_free_throws_per_field_goal_attempt\n0.008229\n\n\nopponent_assist_percentage\n0.008150\n\n\n\nWhat stands out:\n- Adjusted Net Rating (0.44) dominates — no surprise, as it combines offensive and defensive efficiency into a single margin measure.\n- Simple Rating System (0.19) comes in strong as well, reinforcing that overall team strength is a core predictor.\n- Home and Road Win Percentages (0.04–0.05) show up prominently. These can be leaky if they include NCAA tournament games, but they also capture consistency across different environments.\n- Shooting percentages matter: both a team’s own 3PT% and their opponent’s 3PT% make the list, underscoring how much the perimeter game swings outcomes in March.\n- Margin of Victory, Free Throw %, and Turnovers (via steal/block/assist rates) add smaller but still notable contributions. These capture execution and discipline.\n- Strength of Schedule appears lower down, but still matters — elite teams tend to prove it against tough competition."
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#takeaways",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#takeaways",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nEfficiency rules: Adjusted Net Rating and SRS dominated the model, confirming that broad measures of overall strength drive contender status.\nConsistency counts: Home and road win percentages mattered more than expected, highlighting that playing well in any environment is a marker of strong teams (with the caveat of possible leakage).\nShooting swings games: Both a team’s 3PT% and their opponent’s 3PT% landed in the top features — perimeter play is decisive in March.\nMargins matter: Stats like margin of victory, free throw %, and assist/turnover-related measures added smaller but real contributions, reflecting execution and discipline.\nSchedule still matters: Strength of Schedule showed up, reminding us that teams tested by tough competition are more likely to hold up in the tournament."
+  },
+  {
+    "objectID": "posts/2025-09-27-WhatMakesAContender.html#wrapping-up",
+    "href": "posts/2025-09-27-WhatMakesAContender.html#wrapping-up",
+    "title": "What Makes a College Basketball Contender?",
+    "section": "Wrapping Up",
+    "text": "Wrapping Up\nThe Random Forest model can predict contender_scores within about 3–4 points. Of course, there will always be outliers (like 2014 UConn), but the profile of a real contender is clear."
   },
   {
     "objectID": "projects/data-acquisition.html",
