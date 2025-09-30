@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2025-09-27">
+<meta name="dcterms.date" content="2025-09-29">
 
-<title>What Makes a College Basketball Contender? – Taylor Aydelotte</title>
+<title>What Makes A True Men’s College Basketball Contender – Taylor Aydelotte</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -176,6 +175,10 @@ window.Quarto = {
  <span class="dropdown-text">All Blog Posts</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../posts/2025-09-27-WhatMakesAContender.html">
+ <span class="dropdown-text">2025-09-27 - What Makes A Contender</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../posts/2025-09-18-BYUBasketball.html">
  <span class="dropdown-text">2025-09-18 - BYU Basketball</span></a>
   </li>  
@@ -239,7 +242,6 @@ window.Quarto = {
   <li><a href="#correlation-check" id="toc-correlation-check" class="nav-link" data-scroll-target="#correlation-check">Correlation Check</a></li>
   <li><a href="#regression-models" id="toc-regression-models" class="nav-link" data-scroll-target="#regression-models">Regression Models</a></li>
   <li><a href="#feature-importances" id="toc-feature-importances" class="nav-link" data-scroll-target="#feature-importances">Feature Importances</a></li>
-  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways">Takeaways</a></li>
   <li><a href="#wrapping-up" id="toc-wrapping-up" class="nav-link" data-scroll-target="#wrapping-up">Wrapping Up</a></li>
   </ul>
 </nav>
@@ -249,24 +251,23 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">What Makes a College Basketball Contender?</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-</div>
+<div class="quarto-title-block"><div><h1 class="title">What Makes A True Men’s College Basketball Contender</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">Sports Analytics</div>
+    <div class="quarto-category">College Basketball</div>
+    <div class="quarto-category">Data Science</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 27, 2025</p>
+      <p class="date">September 29, 2025</p>
     </div>
   </div>
   
@@ -278,28 +279,27 @@ window.Quarto = {
 </header>
 
 
+<div class="quarto-figure quarto-figure-center" style="border-radius: 2%">
+<figure class="figure">
+<p><img src="..\resources/March_Madness_logo.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>March Madness Logo</figcaption>
+</figure>
+</div>
 <blockquote class="blockquote">
 <p><em>A data-driven look at who can really cut down the nets.</em></p>
 </blockquote>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Every March, fans wonder: what separates a national title contender from the rest of the field? This season, I set out to answer that question—not by filling out another bracket, but by digging into the data. Here’s the story of how I built a <strong>Contender Score</strong> and tested which stats actually matter.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This post is written for a Stat-386–level audience—comfortable with Python, pandas, and scikit-learn.</p>
-</div>
-</div>
+<p>Every March, fans wonder: <em>What separates a national title contender from the rest of the field?</em> I set out to answer that question—not by filling out another bracket, but by digging into the data. Here’s the story of how I built a <strong>Contender Score</strong> and tested which stats actually matter.</p>
+<p>This analysis uses NCAA Division I Men’s Basketball data from the 2018–19 season through the 2024–25 season (excluding 2020, when the NCAA tournament was canceled due to COVID-19).</p>
+<!-- ::: callout-note
+This post is written for a Stat-386–level audience—comfortable with Python, pandas, and scikit-learn.
+::: -->
 </section>
 <section id="designing-the-contender-score" class="level2">
 <h2 class="anchored" data-anchor-id="designing-the-contender-score">Designing the Contender Score</h2>
+<p>One of the first things that I needed to think about when trying to figure out what makes a title contender is coming up with some way to measure what a “contender” actually is. In College Basketball, the NCAA tournament is what decides the champion each year. The “success” of teams year by year is often measured by how far a team made it in this tournament.</p>
+<p>To capture these shades of success, I built a 0-100 Contender Score that assigns points based on the round reached in the NCAA tournament.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -322,86 +322,309 @@ Note
 </tr>
 <tr class="even">
 <td style="text-align: left;">Elite Eight</td>
-<td style="text-align: right;">65</td>
+<td style="text-align: right;">68</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Sweet 16</td>
-<td style="text-align: right;">50</td>
+<td style="text-align: right;">56</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Round of 32</td>
-<td style="text-align: right;">30</td>
+<td style="text-align: right;">44</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Round of 64</td>
-<td style="text-align: right;">20</td>
+<td style="text-align: right;">32</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">First Four loss</td>
-<td style="text-align: right;">15</td>
+<td style="text-align: right;">20</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Missed Tournament</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">5</td>
 </tr>
 </tbody>
 </table>
-<p>This makes it easy to compare all teams on one scale.</p>
+<p>Why this works:</p>
+<ul>
+<li><p><strong>Continuity</strong>: instead of yes/no, we get a scale that lets us compare teams across tiers. Baylor 2021 (100) and Purdue 2023 (20) sit on opposite ends, while Elite Eight teams land in the middle.</p></li>
+<li><p><strong>Interpretability</strong>: it’s intuitive for fans. Everyone understands that a Final Four run is “worth more” than just making the Sweet 16.</p></li>
+<li><p><strong>Model Flexibility</strong>: it turns the prediction task into a regression problem, letting us rank all teams, even those that missed the tournament.</p></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I gave National Champion (100) extra distance from Runner-Up (90) instead of including them both as the true full contenders. The reasoning is that winning it all is rare and deserves to stand out — it isn’t just one more step in the bracket, it’s the hardest step.</p>
+</div>
+</div>
+<p>In short, the Contender Score let me bridge tournament outcomes with regular-season stats in a way that was numeric, intuitive, and model-friendly.</p>
 </section>
 <section id="the-data" class="level2">
 <h2 class="anchored" data-anchor-id="the-data">The Data</h2>
+<p>To train the model, I used a wide set of team-level statistics from each season, covering both offensive and defensive performance. The features fall naturally into a few groups:</p>
 <ul>
-<li><strong>Efficiency metrics</strong>: offensive/defensive rating, net efficiency<br>
+<li><strong>Efficiency metrics</strong>
+<ul>
+<li>Offensive &amp; defensive rating (raw and adjusted)<br>
 </li>
-<li><strong>Four Factors</strong>: effective FG%, turnover rate, ORB%, free throw rate<br>
+<li>Net rating, offensive/defensive SRS<br>
 </li>
-<li><strong>Contextual stats</strong>: pace, strength of schedule</li>
+<li>Margin of victory, points per game, opponent points per game</li>
+</ul></li>
+<li><strong>The Four Factors (for both teams and opponents)</strong>
+<ul>
+<li>Effective FG% (<span class="math inline">\(eFG = \tfrac{FGM + 0.5 \times 3PM}{FGA}\)</span>)<br>
+</li>
+<li>Turnover %<br>
+</li>
+<li>Offensive rebound %<br>
+</li>
+<li>Free throw rate (FT/FGA)</li>
+</ul></li>
+<li><strong>Shooting splits</strong>
+<ul>
+<li>FG%, 3P%, FT%<br>
+</li>
+<li>Opponent FG%, 3P%, FT%<br>
+</li>
+<li>Attempt rates (3PA/FGA, FTA/FGA)</li>
+</ul></li>
+<li><strong>Play style &amp; pace</strong>
+<ul>
+<li>Pace and opponent pace<br>
+</li>
+<li>Assist %, steal %, block % (and opponent versions)</li>
+</ul></li>
+<li><strong>Contextual stats</strong>
+<ul>
+<li>Simple Rating System (SRS)<br>
+</li>
+<li>Strength of Schedule (SOS)<br>
+</li>
+<li>Home and road win percentages</li>
+</ul></li>
 </ul>
-<p>⚠️ I excluded tournament win counts to avoid leakage.</p>
-<p>As an example, effective FG% is defined as:</p>
-<p><span class="math display">\[ eFG = \frac{FGM + 0.5 \times 3PM}{FGA} \]</span></p>
+<p>I explicitly excluded tournament win counts or other results-based features to avoid leakage — otherwise the model would be “cheating” by using future outcomes to predict contender status.</p>
 </section>
 <section id="correlation-check" class="level2">
 <h2 class="anchored" data-anchor-id="correlation-check">Correlation Check</h2>
 <p>Here are a few charts that I generated to take a look at correlation between a bunch of different metrics including a team’s Contender Score.</p>
-<p><img src="..\resources/heatmap.png" class="img-fluid" style="border-radius: 2%;width:40.0%"></p>
-<p><img src="..\resources/bar_chart_corr.png" class="img-fluid" style="border-radius: 2%;width:40.0%"></p>
-<p>Findings: - Net efficiency: strongest positive correlation<br>
-- Opponent eFG% allowed: huge driver<br>
-- Turnover %: negative impact<br>
-- Pace: little effect</p>
+<div class="quarto-figure quarto-figure-center" style="border-radius: 2%">
+<figure class="figure">
+<p><img src="..\resources/heatmap.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Correlation Heatmap</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="border-radius: 2%">
+<figure class="figure">
+<p><img src="..\resources/bar_chart_corr.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<figcaption>Correlation Bar Chart</figcaption>
+</figure>
+</div>
+<p>These correlation charts point out a few things:</p>
+<ul>
+<li><p><strong>Efficiencies</strong>: Net Rtg. and SRS showed strongest positive correlation</p></li>
+<li><p><strong>Road Win Percentage</strong>: It’s important that teams show they can win in tough environments</p></li>
+<li><p><strong>Strength of Schedule</strong>: Contenders face tough schedules that prepare them for March</p></li>
+<li><p><strong>Opponent TS%, eFG%, FG%, and O. Rtg.</strong>: Contenders are able to disrupt on defense and force their opponents into less efficient scoring opportunities</p></li>
+</ul>
 </section>
 <section id="regression-models" class="level2">
 <h2 class="anchored" data-anchor-id="regression-models">Regression Models</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> ElasticNet</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score, mean_absolute_error</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> combined.drop(columns<span class="op">=</span>[<span class="st">"team_name"</span>,<span class="st">"year"</span>,<span class="st">"contender_score"</span>])</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> combined[<span class="st">"contender_score"</span>]</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>elastic <span class="op">=</span> ElasticNet(alpha<span class="op">=</span><span class="fl">0.1</span>, l1_ratio<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>elastic.fit(X_train, y_train)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ElasticNet R²:"</span>, r2_score(y_test, elastic.predict(X_test)))</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">500</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>rf.fit(X_train, y_train)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RandomForest R²:"</span>, r2_score(y_test, rf.predict(X_test)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Results:<br>
-- ElasticNet → R² ≈ 0.56, MAE ≈ 7.3<br>
-- RandomForest → R² ≈ 0.81, MAE ≈ 3.6</p>
+<p>For this, I didn’t just train a single model. Instead, I ran a model bake-off: a wide set of regression algorithms ranging from simple linear models to tree ensembles and gradient boosting. Each model was wrapped in the same preprocessing pipeline (imputation + scaling), so the comparison was fair.</p>
+<p>The models I use include:</p>
+<ul>
+<li><p><strong>Baseline</strong>: a simple “predict the median” regressor as a sanity check.</p></li>
+<li><p><strong>Linear models</strong>: plain Linear Regression, Ridge, Lasso, and ElasticNet.</p></li>
+<li><p><strong>Distance- and kernel-based models</strong>: K-Nearest Neighbors (KNN) and Support Vector Regression (SVR).</p></li>
+<li><p><strong>Tree ensembles</strong>: Random Forest, ExtraTrees, and Gradient Boosting.</p></li>
+<li><p><strong>Modern gradient methods</strong>: HistGradientBoosting and XGBoost.</p></li>
+</ul>
+<p>For each model, I evaluated two metrics:</p>
+<ul>
+<li><p><strong>R²</strong> (Coefficient of Determination) — Measures how much of the variation in the target (Contender Score) the model explains. Higher is better, with 1.0 = perfect prediction and 0 = no better than guessing the mean.</p></li>
+<li><p><strong>MAE</strong> (Mean Absolute Error) — The average size of the prediction errors, in the same units as the target. Lower is better. For example, an MAE of 4 means the model’s predictions are off by about 4 Contender Score points on average.</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 0) Imports</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyRegressor</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression, Ridge, Lasso, ElasticNet</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor, ExtraTreesRegressor, GradientBoostingRegressor, HistGradientBoostingRegressor</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVR</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsRegressor</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score, mean_absolute_error</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> xgboost <span class="im">import</span> XGBRegressor</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    HAS_XGB <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    HAS_XGB <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Define models</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>models <span class="op">=</span> {</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Baseline (Median)"</span>: DummyRegressor(strategy<span class="op">=</span><span class="st">"median"</span>),</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="st">"LinearRegression"</span>: LinearRegression(),</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ridge"</span>: Ridge(alpha<span class="op">=</span><span class="fl">5.0</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lasso"</span>: Lasso(alpha<span class="op">=</span><span class="fl">0.001</span>, random_state<span class="op">=</span><span class="dv">42</span>, max_iter<span class="op">=</span><span class="dv">20000</span>),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ElasticNet"</span>: ElasticNet(alpha<span class="op">=</span><span class="fl">0.05</span>, l1_ratio<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">42</span>, max_iter<span class="op">=</span><span class="dv">20000</span>),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="st">"KNN (k=7)"</span>: KNeighborsRegressor(n_neighbors<span class="op">=</span><span class="dv">7</span>, weights<span class="op">=</span><span class="st">"distance"</span>),</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SVR (RBF)"</span>: SVR(C<span class="op">=</span><span class="fl">5.0</span>, epsilon<span class="op">=</span><span class="fl">0.5</span>, kernel<span class="op">=</span><span class="st">"rbf"</span>),</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RandomForest"</span>: RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">1000</span>, max_depth<span class="op">=</span><span class="va">None</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ExtraTrees"</span>: ExtraTreesRegressor(n_estimators<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="st">"GradientBoosting"</span>: GradientBoostingRegressor(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HistGradientBoosting"</span>: HistGradientBoostingRegressor(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> HAS_XGB:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    models[<span class="st">"XGBRegressor"</span>] <span class="op">=</span> XGBRegressor(</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        n_estimators<span class="op">=</span><span class="dv">1200</span>,</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        learning_rate<span class="op">=</span><span class="fl">0.05</span>,</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        max_depth<span class="op">=</span><span class="dv">6</span>,</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        subsample<span class="op">=</span><span class="fl">0.9</span>,</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        colsample_bytree<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        reg_lambda<span class="op">=</span><span class="fl">1.0</span>,</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        random_state<span class="op">=</span><span class="dv">42</span>,</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        n_jobs<span class="op">=-</span><span class="dv">1</span>,</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        tree_method<span class="op">=</span><span class="st">"hist"</span>,</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Helper to evaluate a regressor inside preprocessing pipeline</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate_model(name, reg, preprocessor, X_train, y_train, X_test, y_test):</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    pipe <span class="op">=</span> Pipeline([(<span class="st">"pre"</span>, preprocessor), (<span class="st">"reg"</span>, reg)])</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    pipe.fit(X_train, y_train)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    preds <span class="op">=</span> pipe.predict(X_test)</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>        <span class="st">"model"</span>: name,</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        <span class="st">"R2"</span>: r2_score(y_test, preds),</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        <span class="st">"MAE"</span>: mean_absolute_error(y_test, preds),</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        <span class="st">"pipeline"</span>: pipe,</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Run all models &amp; collect results</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> []</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, reg <span class="kw">in</span> models.items():</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> evaluate_model(name, reg, pre, X_train, y_train, X_test, y_test)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        results.append(res)</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:&gt;20}</span><span class="ss">  |  R²: </span><span class="sc">{</span>res[<span class="st">'R2'</span>]<span class="sc">:.3f}</span><span class="ss">  |  MAE: </span><span class="sc">{</span>res[<span class="st">'MAE'</span>]<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:&gt;20}</span><span class="ss">  |  ERROR: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) Leaderboard</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>leaderboard <span class="op">=</span> (</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    pd.DataFrame([{k: v <span class="cf">for</span> k, v <span class="kw">in</span> r.items() <span class="cf">if</span> k <span class="op">!=</span> <span class="st">"pipeline"</span>} <span class="cf">for</span> r <span class="kw">in</span> results])</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">"R2"</span>, <span class="st">"MAE"</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Model Leaderboard (higher R², lower MAE is better):"</span>)</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(leaderboard[[<span class="st">"model"</span>, <span class="st">"R2"</span>, <span class="st">"MAE"</span>]])</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally grab the best fitted pipeline:</span></span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>best_idx <span class="op">=</span> leaderboard[<span class="st">"R2"</span>].idxmax()</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>best_name <span class="op">=</span> leaderboard.loc[best_idx, <span class="st">"model"</span>]</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>best_pipe <span class="op">=</span> [r[<span class="st">"pipeline"</span>] <span class="cf">for</span> r <span class="kw">in</span> results <span class="cf">if</span> r[<span class="st">"model"</span>] <span class="op">==</span> best_name][<span class="dv">0</span>]</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Best model: </span><span class="sc">{</span>best_name<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Model</th>
+<th style="text-align: right;">R²</th>
+<th style="text-align: right;">MAE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>GradientBoosting</td>
+<td style="text-align: right;">0.767</td>
+<td style="text-align: right;">4.465</td>
+</tr>
+<tr class="even">
+<td>RandomForest</td>
+<td style="text-align: right;">0.755</td>
+<td style="text-align: right;">4.634</td>
+</tr>
+<tr class="odd">
+<td>ExtraTrees</td>
+<td style="text-align: right;">0.753</td>
+<td style="text-align: right;">4.710</td>
+</tr>
+<tr class="even">
+<td>XGBRegressor</td>
+<td style="text-align: right;">0.747</td>
+<td style="text-align: right;">4.749</td>
+</tr>
+<tr class="odd">
+<td>HistGradientBoosting</td>
+<td style="text-align: right;">0.731</td>
+<td style="text-align: right;">4.917</td>
+</tr>
+<tr class="even">
+<td>KNN (k = 7)</td>
+<td style="text-align: right;">0.671</td>
+<td style="text-align: right;">5.312</td>
+</tr>
+<tr class="odd">
+<td>SVR (RBF)</td>
+<td style="text-align: right;">0.639</td>
+<td style="text-align: right;">4.989</td>
+</tr>
+<tr class="even">
+<td>Lasso</td>
+<td style="text-align: right;">0.463</td>
+<td style="text-align: right;">9.073</td>
+</tr>
+<tr class="odd">
+<td>LinearRegression</td>
+<td style="text-align: right;">0.461</td>
+<td style="text-align: right;">9.088</td>
+</tr>
+<tr class="even">
+<td>Ridge</td>
+<td style="text-align: right;">0.461</td>
+<td style="text-align: right;">9.132</td>
+</tr>
+<tr class="odd">
+<td>ElasticNet</td>
+<td style="text-align: right;">0.452</td>
+<td style="text-align: right;">9.221</td>
+</tr>
+<tr class="even">
+<td>Baseline (Median)</td>
+<td style="text-align: right;">-0.188</td>
+<td style="text-align: right;">7.600</td>
+</tr>
+</tbody>
+</table>
+<p>GradientBoosting (R² = 0.77, MAE ≈ 4.5) came out on top, balancing strong predictive power with relatively low error.</p>
 </section>
 <section id="feature-importances" class="level2">
 <h2 class="anchored" data-anchor-id="feature-importances">Feature Importances</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>importances <span class="op">=</span> pd.Series(rf.feature_importances_, index<span class="op">=</span>X.columns).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>importances.head(<span class="dv">10</span>).plot(kind<span class="op">=</span><span class="st">"barh"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Features by Importance"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>style<span class="op">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>importances <span class="op">=</span> pd.Series(model.feature_importances_, index<span class="op">=</span>X.columns).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>importances.head(<span class="dv">10</span>).plot(kind<span class="op">=</span><span class="st">"barh"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Features by Importance"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>style<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -412,87 +635,90 @@ Note
 <tbody>
 <tr class="odd">
 <td><code>net_rating_adjusted</code></td>
-<td style="text-align: right;">0.444064</td>
+<td style="text-align: right;">0.509060</td>
 </tr>
 <tr class="even">
 <td><code>simple_rating_system</code></td>
-<td style="text-align: right;">0.190065</td>
+<td style="text-align: right;">0.111872</td>
 </tr>
 <tr class="odd">
 <td><code>road_win_percentage</code></td>
-<td style="text-align: right;">0.046014</td>
+<td style="text-align: right;">0.065917</td>
 </tr>
 <tr class="even">
 <td><code>home_win_percentage</code></td>
-<td style="text-align: right;">0.042977</td>
-</tr>
-<tr class="odd">
-<td><code>opponent_three_point_percentage</code></td>
-<td style="text-align: right;">0.013307</td>
-</tr>
-<tr class="even">
-<td><code>three_point_percentage</code></td>
-<td style="text-align: right;">0.011756</td>
+<td style="text-align: right;">0.045770</td>
 </tr>
 <tr class="odd">
 <td><code>margin_of_victory</code></td>
-<td style="text-align: right;">0.010719</td>
+<td style="text-align: right;">0.011484</td>
 </tr>
 <tr class="even">
 <td><code>opponent_free_throw_percentage</code></td>
-<td style="text-align: right;">0.010045</td>
+<td style="text-align: right;">0.010957</td>
 </tr>
 <tr class="odd">
-<td><code>opponent_steal_percentage</code></td>
-<td style="text-align: right;">0.009718</td>
+<td><code>three_point_percentage</code></td>
+<td style="text-align: right;">0.010426</td>
 </tr>
 <tr class="even">
-<td><code>opponent_block_percentage</code></td>
-<td style="text-align: right;">0.009532</td>
+<td><code>opponent_three_point_percentage</code></td>
+<td style="text-align: right;">0.009833</td>
+</tr>
+<tr class="odd">
+<td><code>strength_of_schedule</code></td>
+<td style="text-align: right;">0.009164</td>
+</tr>
+<tr class="even">
+<td><code>opponent_steal_percentage</code></td>
+<td style="text-align: right;">0.009055</td>
 </tr>
 <tr class="odd">
 <td><code>assist_percentage</code></td>
-<td style="text-align: right;">0.009376</td>
+<td style="text-align: right;">0.008437</td>
 </tr>
 <tr class="even">
-<td><code>strength_of_schedule</code></td>
-<td style="text-align: right;">0.009060</td>
-</tr>
-<tr class="odd">
-<td><code>steal_percentage</code></td>
-<td style="text-align: right;">0.008573</td>
-</tr>
-<tr class="even">
-<td><code>opponent_free_throws_per_field_goal_attempt</code></td>
-<td style="text-align: right;">0.008229</td>
-</tr>
-<tr class="odd">
 <td><code>opponent_assist_percentage</code></td>
-<td style="text-align: right;">0.008150</td>
+<td style="text-align: right;">0.008384</td>
+</tr>
+<tr class="odd">
+<td><code>opponent_block_percentage</code></td>
+<td style="text-align: right;">0.008328</td>
+</tr>
+<tr class="even">
+<td><code>defensive_rating_adjusted</code></td>
+<td style="text-align: right;">0.008100</td>
+</tr>
+<tr class="odd">
+<td><code>defensive_srs</code></td>
+<td style="text-align: right;">0.007704</td>
 </tr>
 </tbody>
 </table>
-<p>What stands out:<br>
-- Adjusted Net Rating (0.44) dominates — no surprise, as it combines offensive and defensive efficiency into a single margin measure.<br>
-- Simple Rating System (0.19) comes in strong as well, reinforcing that overall team strength is a core predictor.<br>
-- Home and Road Win Percentages (0.04–0.05) show up prominently. These can be leaky if they include NCAA tournament games, but they also capture consistency across different environments.<br>
-- Shooting percentages matter: both a team’s own 3PT% and their opponent’s 3PT% make the list, underscoring how much the perimeter game swings outcomes in March.<br>
-- Margin of Victory, Free Throw %, and Turnovers (via steal/block/assist rates) add smaller but still notable contributions. These capture execution and discipline.<br>
-- Strength of Schedule appears lower down, but still matters — elite teams tend to prove it against tough competition.</p>
-</section>
-<section id="takeaways" class="level2">
-<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<p><strong>What stands out:</strong></p>
 <ul>
-<li><strong>Efficiency rules</strong>: Adjusted Net Rating and SRS dominated the model, confirming that broad measures of overall strength drive contender status.</li>
-<li><strong>Consistency counts</strong>: Home and road win percentages mattered more than expected, highlighting that playing well in any environment is a marker of strong teams (with the caveat of possible leakage).</li>
-<li><strong>Shooting swings games</strong>: Both a team’s 3PT% and their opponent’s 3PT% landed in the top features — perimeter play is decisive in March.</li>
-<li><strong>Margins matter</strong>: Stats like margin of victory, free throw %, and assist/turnover-related measures added smaller but real contributions, reflecting execution and discipline.</li>
-<li><strong>Schedule still matters</strong>: Strength of Schedule showed up, reminding us that teams tested by tough competition are more likely to hold up in the tournament.</li>
+<li><p>Adjusted Net Rating (0.51) dominates — this combined offensive/defensive margin is by far the strongest single predictor of contender status.</p></li>
+<li><p>Simple Rating System (0.11) comes in second, reinforcing the value of all-around team strength.</p></li>
+<li><p>Road (0.066) and Home (0.046) Win Percentages still appear prominently. These can be a little leaky if tournament games are included, but they capture consistency across environments.</p></li>
+<li><p>Margin of Victory and Defensive metrics — margin of victory (0.011), adjusted defensive rating (0.008), and defensive SRS (0.008) all show up, highlighting that elite defenses continue to matter.</p></li>
+<li><p>Shooting efficiency matters — both a team’s own 3PT% (0.010) and their opponent’s 3PT% (0.010) play important roles, reminding us how much the perimeter game can swing outcomes.</p></li>
+<li><p>Supporting cast features — opponent FT% (0.011), opponent steals, blocks, and assists (all around 0.008–0.009), along with assist percentage (0.008), provide smaller but meaningful contributions. These capture discipline, ball movement, and defensive disruption.</p></li>
+<li><p>Strength of Schedule (0.009) remains in the mix, showing that teams tested against tougher competition are more likely to survive March.</p></li>
 </ul>
 </section>
 <section id="wrapping-up" class="level2">
 <h2 class="anchored" data-anchor-id="wrapping-up">Wrapping Up</h2>
-<p>The Random Forest model can predict contender_scores within about 3–4 points. Of course, there will always be outliers (like 2014 UConn), but the profile of a real contender is clear.</p>
+<p>The GradientBoosting model (and other ensemble methods) can predict Contender Scores within about 3–5 points on average. That’s impressively accurate given the chaos of March Madness. Of course, there will always be outliers — 2014 UConn making a surprise run from a 7-seed or 2023 FAU storming to the Final Four — but even those Cinderella stories stand out precisely because they’re rare exceptions to the rule.</p>
+<p>When you zoom out across thousands of team-seasons, the data paints a clear, consistent profile of what true contenders look like:</p>
+<ul>
+<li><p><strong>Efficiency rules</strong> — Adjusted Net Rating absolutely dominates the model. Teams that outscore their opponents by wide margins on a per-possession basis are almost always in the title conversation.</p></li>
+<li><p><strong>Consistency counts</strong> — Home and road win percentages rise to the top of the importance list. Contenders don’t just rack up wins at home; they prove they can survive in hostile environments.</p></li>
+<li><p><strong>Defense still wins</strong> — Opponent shooting metrics (eFG%, 3P%, FT%) and defensive efficiency underline that limiting opponents is a defining trait of champions. You can’t just outscore everyone — stops matter.</p></li>
+<li><p><strong>Strength of Schedule matters</strong> — Contenders are forged against tough competition. Teams that cruise through weak schedules may look good on paper, but the model recognizes that they’re less prepared for the gauntlet of March.</p></li>
+<li><p><strong>Supporting stats add nuance</strong> — Features like assist %, turnover/steal rates, and margin of victory don’t carry the same weight as net rating, but they sharpen the edges of the contender profile by capturing discipline, ball movement, and the ability to execute under pressure.</p></li>
+</ul>
+<p>Put simply: the numbers confirm what coaches and fans have long believed. True contenders are efficient, balanced, resilient, and battle-tested. While upsets will always capture headlines, the data shows that championships are built on fundamentals that consistently show up in the stats.</p>
+<p>Do you think that your team has what it takes? Make sure to keep an eye out for these key indicators the next time you are watching your favorite team to tell if they might have what it takes to truly contend for a National Championship!</p>
 
 
 <!-- -->
@@ -952,9 +1178,9 @@ Note
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "What Makes a College Basketball Contender?"</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Your Name"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2025-09-27</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "What Makes A True Men's College Basketball Contender"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2025-09-29</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [Sports Analytics, College Basketball, Data Science]</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
@@ -968,133 +1194,301 @@ Note
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; *A data-driven look at who can really cut down the nets.*</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="al">![March Madness Logo](/resources/March_Madness_logo.png)</span>{width=80% style="border-radius: 2%"}</span>
 <span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; *A data-driven look at who can really cut down the nets.*</span></span>
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>Every March, fans wonder: what separates a national title contender from the rest of the field? This season, I set out to answer that question—not by filling out another bracket, but by digging into the data. Here’s the story of how I built a **Contender Score** and tested which stats actually matter.</span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>This post is written for a Stat-386–level audience—comfortable with Python, pandas, and scikit-learn.</span>
-<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>Every March, fans wonder: *What separates a national title contender from the rest of the field?* I set out to answer that question—not by filling out another bracket, but by digging into the data. Here’s the story of how I built a **Contender Score** and tested which stats actually matter. </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a>This analysis uses NCAA Division I Men’s Basketball data from the 2018–19 season through the 2024–25 season (excluding 2020, when the NCAA tournament was canceled due to COVID-19).  </span>
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## Designing the Contender Score</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Round Reached            <span class="pp">|</span> Contender Score <span class="pp">|</span></span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="pp">|:-------------------------|----------------:|</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> National Champion         <span class="pp">|</span> 100             <span class="pp">|</span></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Runner-Up                 <span class="pp">|</span> 90              <span class="pp">|</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Final Four (lost in semi) <span class="pp">|</span> 80              <span class="pp">|</span></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Elite Eight               <span class="pp">|</span> 65              <span class="pp">|</span></span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sweet 16                  <span class="pp">|</span> 50              <span class="pp">|</span></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Round of 32               <span class="pp">|</span> 30              <span class="pp">|</span></span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Round of 64               <span class="pp">|</span> 20              <span class="pp">|</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> First Four loss           <span class="pp">|</span> 15              <span class="pp">|</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Missed Tournament         <span class="pp">|</span> 0               <span class="pp">|</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>This makes it easy to compare all teams on one scale.</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Data</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Efficiency metrics**: offensive/defensive rating, net efficiency  </span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Four Factors**: effective FG%, turnover rate, ORB%, free throw rate  </span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contextual stats**: pace, strength of schedule  </span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- ::: callout-note</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">This post is written for a Stat-386–level audience—comfortable with Python, pandas, and scikit-learn.</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="co">::: --&gt;</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## Designing the Contender Score</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>One of the first things that I needed to think about when trying to figure out what makes a title contender is coming up with some way to measure what a "contender" actually is. In College Basketball, the NCAA tournament is what decides the champion each year. The "success" of teams year by year is often measured by how far a team made it in this tournament. </span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>To capture these shades of success, I built a 0-100 Contender Score that assigns points based on the round reached in the NCAA tournament. </span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Round Reached             <span class="pp">|</span> Contender Score <span class="pp">|</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a><span class="pp">| :------------------------</span> <span class="pp">| --------------:</span> <span class="pp">|</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> National Champion         <span class="pp">|</span>             100 <span class="pp">|</span></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Runner-Up                 <span class="pp">|</span>              90 <span class="pp">|</span></span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Final Four (lost in semi) <span class="pp">|</span>              80 <span class="pp">|</span></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Elite Eight               <span class="pp">|</span>              68 <span class="pp">|</span></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Sweet 16                  <span class="pp">|</span>              56 <span class="pp">|</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Round of 32               <span class="pp">|</span>              44 <span class="pp">|</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Round of 64               <span class="pp">|</span>              32 <span class="pp">|</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> First Four loss           <span class="pp">|</span>              20 <span class="pp">|</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Missed Tournament         <span class="pp">|</span>               5 <span class="pp">|</span></span>
 <span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>⚠️ I excluded tournament win counts to avoid leakage.</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>As an example, effective FG% is defined as:</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>$$ eFG = \frac{FGM + 0.5 \times 3PM}{FGA} $$</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a><span class="fu">## Correlation Check</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>Here are a few charts that I generated to take a look at correlation between a bunch of different metrics including a team's Contender Score.</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="al">![](/resources/heatmap.png)</span>{width=40% style="border-radius: 2%"}</span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="al">![](/resources/bar_chart_corr.png)</span>{width=40% style="border-radius: 2%"}</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>Findings:</span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Net efficiency: strongest positive correlation  </span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Opponent eFG% allowed: huge driver  </span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Turnover %: negative impact  </span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pace: little effect  </span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regression Models</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split</span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> ElasticNet</span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor</span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score, mean_absolute_error</span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> combined.drop(columns<span class="op">=</span>[<span class="st">"team_name"</span>,<span class="st">"year"</span>,<span class="st">"contender_score"</span>])</span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> combined[<span class="st">"contender_score"</span>]</span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>X_train, X_test, y_train, y_test <span class="op">=</span> train_test_split(X, y, test_size<span class="op">=</span><span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>elastic <span class="op">=</span> ElasticNet(alpha<span class="op">=</span><span class="fl">0.1</span>, l1_ratio<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>elastic.fit(X_train, y_train)</span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"ElasticNet R²:"</span>, r2_score(y_test, elastic.predict(X_test)))</span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>rf <span class="op">=</span> RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">500</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>rf.fit(X_train, y_train)</span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"RandomForest R²:"</span>, r2_score(y_test, rf.predict(X_test)))</span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>Results:  </span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ElasticNet → R² ≈ 0.56, MAE ≈ 7.3  </span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>RandomForest → R² ≈ 0.81, MAE ≈ 3.6  </span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>Why this works:  </span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Continuity**: instead of yes/no, we get a scale that lets us compare teams across tiers. Baylor 2021 (100) and Purdue 2023 (20) sit on opposite ends, while Elite Eight teams land in the middle.  </span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Interpretability**: it’s intuitive for fans. Everyone understands that a Final Four run is “worth more” than just making the Sweet 16.  </span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Model Flexibility**: it turns the prediction task into a regression problem, letting us rank all teams, even those that missed the tournament.  </span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>I gave National Champion (100) extra distance from Runner-Up (90) instead of including them both as the true full contenders. The reasoning is that winning it all is rare and deserves to stand out — it isn’t just one more step in the bracket, it’s the hardest step.</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>In short, the Contender Score let me bridge tournament outcomes with regular-season stats in a way that was numeric, intuitive, and model-friendly.</span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## The Data</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>To train the model, I used a wide set of team-level statistics from each season, covering both offensive and defensive performance. The features fall naturally into a few groups:</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Efficiency metrics**  </span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Offensive &amp; defensive rating (raw and adjusted)  </span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Net rating, offensive/defensive SRS  </span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Margin of victory, points per game, opponent points per game  </span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**The Four Factors (for both teams and opponents)**  </span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Effective FG% ($eFG = \tfrac{FGM + 0.5 \times 3PM}{FGA}$)  </span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Turnover %  </span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Offensive rebound %  </span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Free throw rate (FT/FGA)  </span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Shooting splits**  </span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>FG%, 3P%, FT%  </span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Opponent FG%, 3P%, FT%  </span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Attempt rates (3PA/FGA, FTA/FGA)  </span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Play style &amp; pace**  </span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Pace and opponent pace  </span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Assist %, steal %, block % (and opponent versions)  </span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Contextual stats**  </span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Simple Rating System (SRS)  </span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Strength of Schedule (SOS)  </span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Home and road win percentages  </span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>I explicitly excluded tournament win counts or other results-based features to avoid leakage — otherwise the model would be “cheating” by using future outcomes to predict contender status.</span>
 <span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Feature Importances</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="fu">## Correlation Check</span></span>
 <span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>importances <span class="op">=</span> pd.Series(rf.feature_importances_, index<span class="op">=</span>X.columns).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>importances.head(<span class="dv">10</span>).plot(kind<span class="op">=</span><span class="st">"barh"</span>)</span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Features by Importance"</span>)</span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Feature                                       <span class="pp">|</span> Importance <span class="pp">|</span></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="pp">| ---------------------------------------------</span> <span class="pp">| ---------:</span> <span class="pp">|</span></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`net_rating_adjusted`</span>                         <span class="pp">|</span>   0.444064 <span class="pp">|</span></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`simple_rating_system`</span>                        <span class="pp">|</span>   0.190065 <span class="pp">|</span></span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`road_win_percentage`</span>                         <span class="pp">|</span>   0.046014 <span class="pp">|</span></span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`home_win_percentage`</span>                         <span class="pp">|</span>   0.042977 <span class="pp">|</span></span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_three_point_percentage`</span>             <span class="pp">|</span>   0.013307 <span class="pp">|</span></span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`three_point_percentage`</span>                      <span class="pp">|</span>   0.011756 <span class="pp">|</span></span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`margin_of_victory`</span>                           <span class="pp">|</span>   0.010719 <span class="pp">|</span></span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_free_throw_percentage`</span>              <span class="pp">|</span>   0.010045 <span class="pp">|</span></span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_steal_percentage`</span>                   <span class="pp">|</span>   0.009718 <span class="pp">|</span></span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_block_percentage`</span>                   <span class="pp">|</span>   0.009532 <span class="pp">|</span></span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`assist_percentage`</span>                           <span class="pp">|</span>   0.009376 <span class="pp">|</span></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`strength_of_schedule`</span>                        <span class="pp">|</span>   0.009060 <span class="pp">|</span></span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`steal_percentage`</span>                            <span class="pp">|</span>   0.008573 <span class="pp">|</span></span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_free_throws_per_field_goal_attempt`</span> <span class="pp">|</span>   0.008229 <span class="pp">|</span></span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_assist_percentage`</span>                  <span class="pp">|</span>   0.008150 <span class="pp">|</span></span>
-<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>Here are a few charts that I generated to take a look at correlation between a bunch of different metrics including a team's Contender Score.</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a><span class="al">![Correlation Heatmap](/resources/heatmap.png)</span>{width=80% style="border-radius: 2%"}</span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a><span class="al">![Correlation Bar Chart](/resources/bar_chart_corr.png)</span>{width=80% style="border-radius: 2%"}</span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>These correlation charts point out a few things:  </span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Efficiencies**: Net Rtg. and SRS showed strongest positive correlation  </span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Road Win Percentage**: It's important that teams show they can win in tough environments  </span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Strength of Schedule**: Contenders face tough schedules that prepare them for March  </span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Opponent TS%, eFG%, FG%, and O. Rtg.**: Contenders are able to disrupt on defense and force their opponents into less efficient scoring opportunities</span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="fu">## Regression Models</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>For this, I didn’t just train a single model. Instead, I ran a model bake-off: a wide set of regression algorithms ranging from simple linear models to tree ensembles and gradient boosting. Each model was wrapped in the same preprocessing pipeline (imputation + scaling), so the comparison was fair.</span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>The models I use include:  </span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Baseline**: a simple “predict the median” regressor as a sanity check.  </span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Linear models**: plain Linear Regression, Ridge, Lasso, and ElasticNet.  </span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Distance- and kernel-based models**: K-Nearest Neighbors (KNN) and Support Vector Regression (SVR).  </span>
 <span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>What stands out:  </span>
-<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Adjusted Net Rating (0.44) dominates — no surprise, as it combines offensive and defensive efficiency into a single margin measure.  </span>
-<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Simple Rating System (0.19) comes in strong as well, reinforcing that overall team strength is a core predictor.  </span>
-<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Home and Road Win Percentages (0.04–0.05) show up prominently. These can be leaky if they include NCAA tournament games, but they also capture consistency across different environments.  </span>
-<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Shooting percentages matter: both a team’s own 3PT% and their opponent’s 3PT% make the list, underscoring how much the perimeter game swings outcomes in March.  </span>
-<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Margin of Victory, Free Throw %, and Turnovers (via steal/block/assist rates) add smaller but still notable contributions. These capture execution and discipline.  </span>
-<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Strength of Schedule appears lower down, but still matters — elite teams tend to prove it against tough competition.   </span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Tree ensembles**: Random Forest, ExtraTrees, and Gradient Boosting.  </span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Modern gradient methods**: HistGradientBoosting and XGBoost.  </span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>For each model, I evaluated two metrics:  </span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**R²** (Coefficient of Determination) — Measures how much of the variation in the target (Contender Score) the model explains. Higher is better, with 1.0 = perfect prediction and 0 = no better than guessing the mean.</span>
 <span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="fu">## Takeaways</span></span>
+<span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**MAE** (Mean Absolute Error) — The average size of the prediction errors, in the same units as the target. Lower is better. For example, an MAE of 4 means the model’s predictions are off by about 4 Contender Score points on average.</span>
 <span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Efficiency rules**: Adjusted Net Rating and SRS dominated the model, confirming that broad measures of overall strength drive contender status.</span>
-<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Consistency counts**: Home and road win percentages mattered more than expected, highlighting that playing well in any environment is a marker of strong teams (with the caveat of possible leakage).</span>
-<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Shooting swings games**: Both a team’s 3PT% and their opponent’s 3PT% landed in the top features — perimeter play is decisive in March.</span>
-<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Margins matter**: Stats like margin of victory, free throw %, and assist/turnover-related measures added smaller but real contributions, reflecting execution and discipline.</span>
-<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>**Schedule still matters**: Strength of Schedule showed up, reminding us that teams tested by tough competition are more likely to hold up in the tournament.</span>
-<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wrapping Up</span></span>
-<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a>The Random Forest model can predict contender_scores within about 3–4 points. Of course, there will always be outliers (like 2014 UConn), but the profile of a real contender is clear.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+<span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a><span class="co"># 0) Imports</span></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.dummy <span class="im">import</span> DummyRegressor</span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> LinearRegression, Ridge, Lasso, ElasticNet</span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.ensemble <span class="im">import</span> RandomForestRegressor, ExtraTreesRegressor, GradientBoostingRegressor, HistGradientBoostingRegressor</span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.svm <span class="im">import</span> SVR</span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.neighbors <span class="im">import</span> KNeighborsRegressor</span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score, mean_absolute_error</span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a>    <span class="im">from</span> xgboost <span class="im">import</span> XGBRegressor</span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a>    HAS_XGB <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="cf">except</span> <span class="pp">Exception</span>:</span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a>    HAS_XGB <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Define models</span></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>models <span class="op">=</span> {</span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Baseline (Median)"</span>: DummyRegressor(strategy<span class="op">=</span><span class="st">"median"</span>),</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>    <span class="st">"LinearRegression"</span>: LinearRegression(),</span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Ridge"</span>: Ridge(alpha<span class="op">=</span><span class="fl">5.0</span>, random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Lasso"</span>: Lasso(alpha<span class="op">=</span><span class="fl">0.001</span>, random_state<span class="op">=</span><span class="dv">42</span>, max_iter<span class="op">=</span><span class="dv">20000</span>),</span>
+<span id="cb3-164"><a href="#cb3-164" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ElasticNet"</span>: ElasticNet(alpha<span class="op">=</span><span class="fl">0.05</span>, l1_ratio<span class="op">=</span><span class="fl">0.5</span>, random_state<span class="op">=</span><span class="dv">42</span>, max_iter<span class="op">=</span><span class="dv">20000</span>),</span>
+<span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a>    <span class="st">"KNN (k=7)"</span>: KNeighborsRegressor(n_neighbors<span class="op">=</span><span class="dv">7</span>, weights<span class="op">=</span><span class="st">"distance"</span>),</span>
+<span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a>    <span class="st">"SVR (RBF)"</span>: SVR(C<span class="op">=</span><span class="fl">5.0</span>, epsilon<span class="op">=</span><span class="fl">0.5</span>, kernel<span class="op">=</span><span class="st">"rbf"</span>),</span>
+<span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a>    <span class="st">"RandomForest"</span>: RandomForestRegressor(n_estimators<span class="op">=</span><span class="dv">1000</span>, max_depth<span class="op">=</span><span class="va">None</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>),</span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>    <span class="st">"ExtraTrees"</span>: ExtraTreesRegressor(n_estimators<span class="op">=</span><span class="dv">1000</span>, random_state<span class="op">=</span><span class="dv">42</span>, n_jobs<span class="op">=-</span><span class="dv">1</span>),</span>
+<span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a>    <span class="st">"GradientBoosting"</span>: GradientBoostingRegressor(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>    <span class="st">"HistGradientBoosting"</span>: HistGradientBoostingRegressor(random_state<span class="op">=</span><span class="dv">42</span>),</span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> HAS_XGB:</span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a>    models[<span class="st">"XGBRegressor"</span>] <span class="op">=</span> XGBRegressor(</span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>        n_estimators<span class="op">=</span><span class="dv">1200</span>,</span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>        learning_rate<span class="op">=</span><span class="fl">0.05</span>,</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>        max_depth<span class="op">=</span><span class="dv">6</span>,</span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>        subsample<span class="op">=</span><span class="fl">0.9</span>,</span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a>        colsample_bytree<span class="op">=</span><span class="fl">0.8</span>,</span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>        reg_lambda<span class="op">=</span><span class="fl">1.0</span>,</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a>        random_state<span class="op">=</span><span class="dv">42</span>,</span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>        n_jobs<span class="op">=-</span><span class="dv">1</span>,</span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>        tree_method<span class="op">=</span><span class="st">"hist"</span>,</span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Helper to evaluate a regressor inside preprocessing pipeline</span></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> evaluate_model(name, reg, preprocessor, X_train, y_train, X_test, y_test):</span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a>    pipe <span class="op">=</span> Pipeline([(<span class="st">"pre"</span>, preprocessor), (<span class="st">"reg"</span>, reg)])</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a>    pipe.fit(X_train, y_train)</span>
+<span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a>    preds <span class="op">=</span> pipe.predict(X_test)</span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {</span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>        <span class="st">"model"</span>: name,</span>
+<span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>        <span class="st">"R2"</span>: r2_score(y_test, preds),</span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>        <span class="st">"MAE"</span>: mean_absolute_error(y_test, preds),</span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a>        <span class="st">"pipeline"</span>: pipe,</span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) Run all models &amp; collect results</span></span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a>results <span class="op">=</span> []</span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> name, reg <span class="kw">in</span> models.items():</span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> evaluate_model(name, reg, pre, X_train, y_train, X_test, y_test)</span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a>        results.append(res)</span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:&gt;20}</span><span class="ss">  |  R²: </span><span class="sc">{</span>res[<span class="st">'R2'</span>]<span class="sc">:.3f}</span><span class="ss">  |  MAE: </span><span class="sc">{</span>res[<span class="st">'MAE'</span>]<span class="sc">:.3f}</span><span class="ss">"</span>)</span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>name<span class="sc">:&gt;20}</span><span class="ss">  |  ERROR: </span><span class="sc">{</span>e<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="co"># 4) Leaderboard</span></span>
+<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a><span class="co"># ---------------------------</span></span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a>leaderboard <span class="op">=</span> (</span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>    pd.DataFrame([{k: v <span class="cf">for</span> k, v <span class="kw">in</span> r.items() <span class="cf">if</span> k <span class="op">!=</span> <span class="st">"pipeline"</span>} <span class="cf">for</span> r <span class="kw">in</span> results])</span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a>    .sort_values([<span class="st">"R2"</span>, <span class="st">"MAE"</span>], ascending<span class="op">=</span>[<span class="va">False</span>, <span class="va">True</span>])</span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>    .reset_index(drop<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">Model Leaderboard (higher R², lower MAE is better):"</span>)</span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(leaderboard[[<span class="st">"model"</span>, <span class="st">"R2"</span>, <span class="st">"MAE"</span>]])</span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a><span class="co"># Optionally grab the best fitted pipeline:</span></span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a>best_idx <span class="op">=</span> leaderboard[<span class="st">"R2"</span>].idxmax()</span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a>best_name <span class="op">=</span> leaderboard.loc[best_idx, <span class="st">"model"</span>]</span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a>best_pipe <span class="op">=</span> [r[<span class="st">"pipeline"</span>] <span class="cf">for</span> r <span class="kw">in</span> results <span class="cf">if</span> r[<span class="st">"model"</span>] <span class="op">==</span> best_name][<span class="dv">0</span>]</span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\n</span><span class="ss">Best model: </span><span class="sc">{</span>best_name<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Model               <span class="pp">|</span> R²    <span class="pp">|</span> MAE   <span class="pp">|</span></span>
+<span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a><span class="pp">|---------------------|------:|------:|</span></span>
+<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> GradientBoosting    <span class="pp">|</span> 0.767 <span class="pp">|</span> 4.465 <span class="pp">|</span></span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> RandomForest        <span class="pp">|</span> 0.755 <span class="pp">|</span> 4.634 <span class="pp">|</span></span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ExtraTrees          <span class="pp">|</span> 0.753 <span class="pp">|</span> 4.710 <span class="pp">|</span></span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> XGBRegressor        <span class="pp">|</span> 0.747 <span class="pp">|</span> 4.749 <span class="pp">|</span></span>
+<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> HistGradientBoosting<span class="pp">|</span> 0.731 <span class="pp">|</span> 4.917 <span class="pp">|</span></span>
+<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> KNN (k = 7)         <span class="pp">|</span> 0.671 <span class="pp">|</span> 5.312 <span class="pp">|</span></span>
+<span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> SVR (RBF)           <span class="pp">|</span> 0.639 <span class="pp">|</span> 4.989 <span class="pp">|</span></span>
+<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Lasso               <span class="pp">|</span> 0.463 <span class="pp">|</span> 9.073 <span class="pp">|</span></span>
+<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> LinearRegression    <span class="pp">|</span> 0.461 <span class="pp">|</span> 9.088 <span class="pp">|</span></span>
+<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Ridge               <span class="pp">|</span> 0.461 <span class="pp">|</span> 9.132 <span class="pp">|</span></span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> ElasticNet          <span class="pp">|</span> 0.452 <span class="pp">|</span> 9.221 <span class="pp">|</span></span>
+<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Baseline (Median)   <span class="pp">|</span> -0.188<span class="pp">|</span> 7.600 <span class="pp">|</span></span>
+<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a>GradientBoosting (R² = 0.77, MAE ≈ 4.5) came out on top, balancing strong predictive power with relatively low error.</span>
+<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a><span class="fu">## Feature Importances</span></span>
+<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a><span class="in">```python</span></span>
+<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;</span>style<span class="op">&gt;</span></span>
+<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a>importances <span class="op">=</span> pd.Series(model.feature_importances_, index<span class="op">=</span>X.columns).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a>importances.head(<span class="dv">10</span>).plot(kind<span class="op">=</span><span class="st">"barh"</span>)</span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Top 10 Features by Importance"</span>)</span>
+<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a><span class="op">&lt;/</span>style<span class="op">&gt;</span></span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> Feature                        <span class="pp">|</span> Importance <span class="pp">|</span></span>
+<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a><span class="pp">|--------------------------------|-----------:|</span></span>
+<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`net_rating_adjusted`</span>          <span class="pp">|</span>   0.509060 <span class="pp">|</span></span>
+<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`simple_rating_system`</span>         <span class="pp">|</span>   0.111872 <span class="pp">|</span></span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`road_win_percentage`</span>          <span class="pp">|</span>   0.065917 <span class="pp">|</span></span>
+<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`home_win_percentage`</span>          <span class="pp">|</span>   0.045770 <span class="pp">|</span></span>
+<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`margin_of_victory`</span>            <span class="pp">|</span>   0.011484 <span class="pp">|</span></span>
+<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_free_throw_percentage`</span> <span class="pp">|</span> 0.010957 <span class="pp">|</span></span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`three_point_percentage`</span>       <span class="pp">|</span>   0.010426 <span class="pp">|</span></span>
+<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_three_point_percentage`</span> <span class="pp">|</span> 0.009833 <span class="pp">|</span></span>
+<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`strength_of_schedule`</span>         <span class="pp">|</span>   0.009164 <span class="pp">|</span></span>
+<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_steal_percentage`</span>    <span class="pp">|</span>   0.009055 <span class="pp">|</span></span>
+<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`assist_percentage`</span>            <span class="pp">|</span>   0.008437 <span class="pp">|</span></span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_assist_percentage`</span>   <span class="pp">|</span>   0.008384 <span class="pp">|</span></span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`opponent_block_percentage`</span>    <span class="pp">|</span>   0.008328 <span class="pp">|</span></span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`defensive_rating_adjusted`</span>    <span class="pp">|</span>   0.008100 <span class="pp">|</span></span>
+<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span> <span class="in">`defensive_srs`</span>                <span class="pp">|</span>   0.007704 <span class="pp">|</span></span>
+<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a>**What stands out:**  </span>
+<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Adjusted Net Rating (0.51) dominates — this combined offensive/defensive margin is by far the strongest single predictor of contender status.  </span>
+<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Simple Rating System (0.11) comes in second, reinforcing the value of all-around team strength.  </span>
+<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Road (0.066) and Home (0.046) Win Percentages still appear prominently. These can be a little leaky if tournament games are included, but they capture consistency across environments.  </span>
+<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Margin of Victory and Defensive metrics — margin of victory (0.011), adjusted defensive rating (0.008), and defensive SRS (0.008) all show up, highlighting that elite defenses continue to matter.  </span>
+<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Shooting efficiency matters — both a team’s own 3PT% (0.010) and their opponent’s 3PT% (0.010) play important roles, reminding us how much the perimeter game can swing outcomes.  </span>
+<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Supporting cast features — opponent FT% (0.011), opponent steals, blocks, and assists (all around 0.008–0.009), along with assist percentage (0.008), provide smaller but meaningful contributions. These capture discipline, ball movement, and defensive disruption. </span>
+<span id="cb3-291"><a href="#cb3-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-292"><a href="#cb3-292" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Strength of Schedule (0.009) remains in the mix, showing that teams tested against tougher competition are more likely to survive March.  </span>
+<span id="cb3-293"><a href="#cb3-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-294"><a href="#cb3-294" aria-hidden="true" tabindex="-1"></a><span class="fu">## Wrapping Up</span></span>
+<span id="cb3-295"><a href="#cb3-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-296"><a href="#cb3-296" aria-hidden="true" tabindex="-1"></a>The GradientBoosting model (and other ensemble methods) can predict Contender Scores within about 3–5 points on average. That’s impressively accurate given the chaos of March Madness. Of course, there will always be outliers — 2014 UConn making a surprise run from a 7-seed or 2023 FAU storming to the Final Four — but even those Cinderella stories stand out precisely because they’re rare exceptions to the rule.</span>
+<span id="cb3-297"><a href="#cb3-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-298"><a href="#cb3-298" aria-hidden="true" tabindex="-1"></a>When you zoom out across thousands of team-seasons, the data paints a clear, consistent profile of what true contenders look like:</span>
+<span id="cb3-299"><a href="#cb3-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-300"><a href="#cb3-300" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Efficiency rules** — Adjusted Net Rating absolutely dominates the model. Teams that outscore their opponents by wide margins on a per-possession basis are almost always in the title conversation.  </span>
+<span id="cb3-301"><a href="#cb3-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-302"><a href="#cb3-302" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Consistency counts** — Home and road win percentages rise to the top of the importance list. Contenders don’t just rack up wins at home; they prove they can survive in hostile environments.  </span>
+<span id="cb3-303"><a href="#cb3-303" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-304"><a href="#cb3-304" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Defense still wins** — Opponent shooting metrics (eFG%, 3P%, FT%) and defensive efficiency underline that limiting opponents is a defining trait of champions. You can’t just outscore everyone — stops matter.  </span>
+<span id="cb3-305"><a href="#cb3-305" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-306"><a href="#cb3-306" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Strength of Schedule matters** — Contenders are forged against tough competition. Teams that cruise through weak schedules may look good on paper, but the model recognizes that they’re less prepared for the gauntlet of March.  </span>
+<span id="cb3-307"><a href="#cb3-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-308"><a href="#cb3-308" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**Supporting stats add nuance** — Features like assist %, turnover/steal rates, and margin of victory don’t carry the same weight as net rating, but they sharpen the edges of the contender profile by capturing discipline, ball movement, and the ability to execute under pressure.  </span>
+<span id="cb3-309"><a href="#cb3-309" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-310"><a href="#cb3-310" aria-hidden="true" tabindex="-1"></a>Put simply: the numbers confirm what coaches and fans have long believed. True contenders are efficient, balanced, resilient, and battle-tested. While upsets will always capture headlines, the data shows that championships are built on fundamentals that consistently show up in the stats.</span>
+<span id="cb3-311"><a href="#cb3-311" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-312"><a href="#cb3-312" aria-hidden="true" tabindex="-1"></a>Do you think that your team has what it takes? Make sure to keep an eye out for these key indicators the next time you are watching your favorite team to tell if they might have what it takes to truly contend for a National Championship!</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 

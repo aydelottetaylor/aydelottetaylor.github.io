@@ -10,6 +10,10 @@
   --border-color: #dee2e6;
 }
 
+pre code { 
+  font-size: 0.6rem; 
+}
+
 /* Navigation customizations */
 .navbar-brand {
   font-weight: bold;
