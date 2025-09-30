@@ -113,7 +113,7 @@ These correlation charts point out a few things:
 
 ## Regression Models
 
-For this, I didn’t just train a single model. Instead, I ran a model bake-off: a wide set of regression algorithms ranging from simple linear models to tree ensembles and gradient boosting. Each model was wrapped in the same preprocessing pipeline (imputation + scaling), so the comparison was fair.
+Which ML method works best on our dataset? For this, I didn’t just train a single model. Instead, I ran a model bake-off: a wide set of regression algorithms ranging from simple linear models to tree ensembles and gradient boosting. Each model was wrapped in the same preprocessing pipeline (imputation + scaling), so the comparison was fair.
 
 The models I use include:  
 
@@ -136,7 +136,7 @@ For each model, I evaluated two metrics:
 
 ```python
 # ---------------------------
-# 0) Imports
+# Imports
 # ---------------------------
 from sklearn.dummy import DummyRegressor
 from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
@@ -154,7 +154,7 @@ except Exception:
     HAS_XGB = False
 
 # ---------------------------
-# 1) Define models
+# Define models
 # ---------------------------
 models = {
     "Baseline (Median)": DummyRegressor(strategy="median"),
@@ -183,7 +183,7 @@ if HAS_XGB:
     )
 
 # ---------------------------
-# 2) Helper to evaluate a regressor inside preprocessing pipeline
+# Helper function to evaluate a regressor inside preprocessing pipeline
 # ---------------------------
 def evaluate_model(name, reg, preprocessor, X_train, y_train, X_test, y_test):
     pipe = Pipeline([("pre", preprocessor), ("reg", reg)])
@@ -197,7 +197,7 @@ def evaluate_model(name, reg, preprocessor, X_train, y_train, X_test, y_test):
     }
 
 # ---------------------------
-# 3) Run all models & collect results
+# Run all models & collect results
 # ---------------------------
 results = []
 for name, reg in models.items():
@@ -209,7 +209,7 @@ for name, reg in models.items():
         print(f"{name:>20}  |  ERROR: {e}")
 
 # ---------------------------
-# 4) Leaderboard
+# Leaderboard
 # ---------------------------
 leaderboard = (
     pd.DataFrame([{k: v for k, v in r.items() if k != "pipeline"} for r in results])
@@ -244,6 +244,8 @@ print(f"\nBest model: {best_name}")
 GradientBoosting (R² = 0.77, MAE ≈ 4.5) came out on top, balancing strong predictive power with relatively low error.
 
 ## Feature Importances
+
+Next, I wanted to see which statistics the model relied on the most when predicting a team’s Contender Score. By extracting the feature importances from the best-performing model, we can identify the stats that consistently separate true contenders from everyone else.
 
 ```python
 <style>
@@ -309,4 +311,4 @@ When you zoom out across thousands of team-seasons, the data paints a clear, con
 
 Put simply: the numbers confirm what coaches and fans have long believed. True contenders are efficient, balanced, resilient, and battle-tested. While upsets will always capture headlines, the data shows that championships are built on fundamentals that consistently show up in the stats.
 
-Do you think that your team has what it takes? Make sure to keep an eye out for these key indicators the next time you are watching your favorite team to tell if they might have what it takes to truly contend for a National Championship!
+Do you think that your team has what it takes? Make sure to keep an eye out for these key indicators the next time you are watching your favorite team to tell if they might be able to truly contend for a National Championship!
