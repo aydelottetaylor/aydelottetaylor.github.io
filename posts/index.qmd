@@ -4,7 +4,7 @@ title: "Blog History"
 
 ## All Posts
 
-#### [What Makes A True Men's College Basketball Contender](2025-09-27-WhatMakesAContender.qmd)
+#### [What Makes A True Men's College Basketball Contender](2025-09-29-WhatMakesAContender.qmd)
 **Description**: Lets take a look at the last 6 NCAA Tournaments to determine what stats matter when we are trying to decide if a team is a true title contender or not.
 
 #### [BYU Basketball: Offensive Firepower Meets Defensive Potential](2025-09-18-BYUBasketball.qmd)
