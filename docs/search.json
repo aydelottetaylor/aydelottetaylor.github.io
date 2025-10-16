@@ -93,6 +93,13 @@
     "text": "Background\nHi, I’m Taylor! I’m a Computer Science student at Brigham Young University on the Data Science and Machine Learning track. I’ve always been fascinated by the patterns hidden in data and the way analytics can be used to solve complex problems. My journey started with a love for sports analytics—especially basketball—but has grown into exploring broader applications like finance, healthcare, and time series forecasting.\nBeyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact."
   },
   {
+    "objectID": "about.html#experience",
+    "href": "about.html#experience",
+    "title": "About Me",
+    "section": "Experience",
+    "text": "Experience\n\nMatchup Madness, Sports Analytics Website - Creator and Owner\nJanuary 2025 - Present\n\nScraped and processed historical NCAA basketball data using Python, SQL, and web scraping libraries; built pipelines to clean and structure data for analysis.\n\nDesigned predictive models and interactive visualizations (Matplotlib, Seaborn, Plotly) to identify matchup trends and communicate insights on matchup-madness.com.\n\n\n\nPrint and Mail Services, Brigham Young University - Software Developer\nJune 2022 - Present\n\nDesigned and optimized databases and internal tracking systems used by Print and Mail Services and Laundry Services, improving operational efficiency.\n\nDeveloped predictive and automated workflows for order management and website systems, applying SQL and data pipelines.\n\nLed the creation of 3 internal and public-facing websites with embedded analytics dashboards, enhancing reporting and client insights.\n\nImplemented strict security and sanitization methods for SQL queries and file uploads, ensuring robust data integrity.\n\n\n\nPrint and Mail Services, Brigham Young University - Customer Service Manager\nApril 2021 - Jume 2022\n\nManaged a team responsible for handling and processing thousands of customer requests; improved order accuracy and turnaround by monitoring data-driven performance metrics.\n\nApplied analytical methods to identify bottlenecks and optimize workflows, leading to measurable gains in speed and efficiency."
+  },
+  {
     "objectID": "about.html#education",
     "href": "about.html#education",
     "title": "About Me",
@@ -104,7 +111,7 @@
     "href": "about.html#skills-interests",
     "title": "About Me",
     "section": "Skills & Interests",
-    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\n\nLibraries & Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\n\nTools: Git, Jupyter Notebooks, Postman, Jira\n\n\n\nAreas of Interest\n\nSports analytics (with a focus on basketball), find me on Matchup-Madness.com\n\nTime series forecasting (sales, pricing, demand)\n\nApplied machine learning for finance and healthcare\n\nExploring patterns in data that inform decisions and improve lives"
+    "text": "Skills & Interests\n\nTechnical Skills\n\nProgramming Languages: Python, C++, SQL, Java, JavaScript, PHP, HTML/CSS\n\nLibraries & Frameworks: Pandas, NumPy, Scikit-learn, PyTorch, TensorFlow, Keras, BeautifulSoup, Scrapy, Flask, Node.js\n\nVisualization: Matplotlib, Seaborn, Plotly\n\nDatabases: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS\n\nTools: Git, Jupyter Notebooks, Postman, Jira\nAI Tools: OpenAI Codex, Cursor, Github Copilot\n\n\n\nSoft Skills\n\nClear Communication\n\nAdaptability\n\nTime Management\n\nNavigating Team Dynamics\n\nCritical Thinking\n\nProblem Solving\n\nBig Picture Vision and Focus\n\n\n\nAreas of Interest\n\nExploring patterns in data that inform decisions and improve lives\n\nSports analytics (with a focus on basketball), find me on Matchup-Madness.com\n\nTime series forecasting (sales, pricing, demand)\n\nApplied machine learning for finance and healthcare"
   },
   {
     "objectID": "about.html#goals",
@@ -132,7 +139,7 @@
     "href": "index.html#about-this-portfolio",
     "title": "",
     "section": "About This Portfolio",
-    "text": "About This Portfolio\nThis portfolio shows my experience in data science and analytics. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI built this site using Quarto and host it on GitHub Pages."
+    "text": "About This Portfolio\nThis portfolio shows my experience in data science and analytics. Each project includes:\n\nMy code with documentation\nVisualizations I created\nWhat I learned and discovered\n\nI also have a blog located on this site that discusses some things I work on in my free time!\nI built this site using Quarto and host it on GitHub Pages."
   },
   {
     "objectID": "index.html#my-skills",

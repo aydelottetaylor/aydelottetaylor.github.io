@@ -13,6 +13,8 @@ This portfolio shows my experience in data science and analytics. Each project i
 - Visualizations I created
 - What I learned and discovered
 
+I also have a blog located on this site that discusses some things I work on in my free time!
+
 I built this site using [Quarto](https://quarto.org/) and host it on [GitHub Pages](https://pages.github.com/).
 
 ## My Skills

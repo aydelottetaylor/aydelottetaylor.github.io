@@ -10,6 +10,28 @@ Hi, I’m Taylor! I’m a Computer Science student at Brigham Young University o
 
 Beyond sports data, I’ve applied my skills to projects ranging from predicting sales data for businesses to experimenting with AI in games like Othello. I’m also exploring opportunities in research, including cancer data analysis with Huntsman Cancer Institute and data quality work with FamilySearch. These experiences have taught me how versatile data science is and how it can make a real impact.
 
+## Experience
+
+### Matchup Madness, Sports Analytics Website - *Creator and Owner*
+**January 2025 - Present**
+
+- Scraped and processed historical NCAA basketball data using Python, SQL, and web scraping libraries; built pipelines to clean and structure data for analysis.  
+- Designed predictive models and interactive visualizations (Matplotlib, Seaborn, Plotly) to identify matchup trends and communicate insights on matchup-madness.com.  
+
+### Print and Mail Services, Brigham Young University - *Software Developer*
+**June 2022 - Present**
+
+- Designed and optimized databases and internal tracking systems used by Print and Mail Services and Laundry Services, improving operational efficiency.  
+- Developed predictive and automated workflows for order management and website systems, applying SQL and data pipelines.  
+- Led the creation of 3 internal and public-facing websites with embedded analytics dashboards, enhancing reporting and client insights.  
+- Implemented strict security and sanitization methods for SQL queries and file uploads, ensuring robust data integrity.  
+
+### Print and Mail Services, Brigham Young University - *Customer Service Manager*
+**April 2021 - Jume 2022**
+
+- Managed a team responsible for handling and processing thousands of customer requests; improved order accuracy and turnaround by monitoring data-driven performance metrics.  
+- Applied analytical methods to identify bottlenecks and optimize workflows, leading to measurable gains in speed and efficiency.
+
 ## Education
 
 - **Computer Science ML/DS, Mathematics** - Brigham Young University, 2026
@@ -23,12 +45,22 @@ Beyond sports data, I’ve applied my skills to projects ranging from predicting
 - **Visualization**: Matplotlib, Seaborn, Plotly  
 - **Databases**: Microsoft SQL Server, MySQL, Oracle Database, Amazon RDS  
 - **Tools**: Git, Jupyter Notebooks, Postman, Jira 
+- **AI Tools**: OpenAI Codex, Cursor, Github Copilot
+
+### Soft Skills
+- Clear Communication  
+- Adaptability  
+- Time Management  
+- Navigating Team Dynamics  
+- Critical Thinking   
+- Problem Solving  
+- Big Picture Vision and Focus  
 
 ### Areas of Interest
+- Exploring patterns in data that inform decisions and improve lives  
 - Sports analytics (with a focus on basketball), find me on [Matchup-Madness.com](https://matchup-madness.com)  
 - Time series forecasting (sales, pricing, demand)  
 - Applied machine learning for finance and healthcare  
-- Exploring patterns in data that inform decisions and improve lives  
 
 ## Goals
 
